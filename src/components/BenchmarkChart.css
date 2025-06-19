@@ -1,0 +1,14 @@
+
+.benchmark-chart {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  height: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 100%;
+}

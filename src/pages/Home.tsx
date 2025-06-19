@@ -1,0 +1,160 @@
+
+import { Link } from 'react-router-dom';
+import AnimatedHero from '../components/AnimatedHero';
+import FeatureCard from '../components/FeatureCard';
+import DashboardVisualization from '../components/DashboardVisualization';
+import TerminalVisualizer from '../components/TerminalVisualizer';
+import './Home.css';
+
+const Home = () => {
+  return (
+    <div className="home-page">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <AnimatedHero />
+        <div className="container hero-content">
+          <h1 className="hero-title fade-in">Pre-Deployment Agent Safety Starts Here</h1>
+          <p className="hero-subtitle fade-in">
+            We build diagnostic tools and security benchmarks to ensure agent-to-agent communication is safe before your AI systems ever go live.
+          </p>
+          <div className="hero-buttons fade-in">
+            <Link to="/benchmark" className="btn btn-primary">Run a Simulation</Link>
+            <Link to="/benchmark" className="btn btn-secondary">Explore Our Benchmark</Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Terminal Section */}
+      <section className="terminal-section section">
+        <div className="container">
+          <div className="terminal-content">
+            <div className="terminal-text fade-in">
+              <h2 className="section-title">Real-Time Vulnerability Detection</h2>
+              <p>
+                Our advanced security scanner identifies potential vulnerabilities in your agent communication systems 
+                before they can be exploited. Watch as our system analyzes agent interactions, identifies risks, 
+                and provides actionable recommendations.
+              </p>
+              <ul className="terminal-features">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Comprehensive vulnerability scanning
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Prompt injection detection
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Memory loop identification
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  OWASP compliance verification
+                </li>
+              </ul>
+              <Link to="/benchmark" className="btn btn-primary">Run Your Own Scan</Link>
+            </div>
+            <div className="terminal-visualization-container fade-in">
+              <TerminalVisualizer />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Features Section */}
+      <section className="features-section section">
+        <div className="container">
+          <h2 className="section-title text-center fade-in">Our Security Features</h2>
+          <div className="grid grid-3">
+            <FeatureCard 
+              icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>}
+              title="Prompt Chain Hardening"
+              description="Secure your agent communication chains against injection attacks and unauthorized access."
+            />
+            <FeatureCard 
+              icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>}
+              title="Agent Card Sanitization"
+              description="Prevent data leakage and ensure proper sanitization of agent communication cards."
+            />
+            <FeatureCard 
+              icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>}
+              title="MCP Port Monitoring"
+              description="Monitor and secure all communication ports between multi-agent systems in real-time."
+            />
+            <FeatureCard 
+              icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>}
+              title="System Communication Graphs"
+              description="Visualize and analyze agent communication patterns to identify potential security risks."
+            />
+            <FeatureCard 
+              icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>}
+              title="OWASP/NIST Compliance"
+              description="Ensure your agent systems meet industry security standards and compliance requirements."
+            />
+            <FeatureCard 
+              icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>}
+              title="Memory Loop Prevention"
+              description="Detect and prevent dangerous memory loops and recursive agent communication patterns."
+            />
+          </div>
+        </div>
+      </section>
+      
+      {/* Dashboard Preview Section */}
+      <section className="dashboard-section section">
+        <div className="container">
+          <div className="dashboard-content">
+            <div className="dashboard-text fade-in">
+              <h2 className="section-title">Visualize Agent Communication Risks</h2>
+              <p>
+                Our interactive dashboard provides real-time visualization of agent communication patterns, 
+                risk assessment, and security vulnerabilities. Identify potential threats before they become problems.
+              </p>
+              <ul className="dashboard-features">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Real-time agent communication mapping
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Risk scoring and vulnerability assessment
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Automated threat detection and alerts
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Historical data analysis and trend reporting
+                </li>
+              </ul>
+              <Link to="/benchmark" className="btn btn-primary">Explore Dashboard</Link>
+            </div>
+            <div className="dashboard-visualization-container fade-in">
+              <DashboardVisualization />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="cta-section section">
+        <div className="container">
+          <div className="cta-content fade-in">
+            <h2 className="section-title text-center">Ready to Secure Your AI Agents?</h2>
+            <p className="cta-text text-center">
+              Start with a free security assessment and discover potential vulnerabilities in your agent communication systems.
+            </p>
+            <div className="cta-buttons">
+              <Link to="/benchmark" className="btn btn-primary">Run Free Assessment</Link>
+              <Link to="/contact" className="btn btn-secondary">Contact Our Team</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Home;
