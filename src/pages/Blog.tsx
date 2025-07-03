@@ -11,41 +11,6 @@ const blogPosts = [
     date: 'June 10, 2025',
     description: 'A survey of the current state of Agentic AI security benchmarking, adoption, and the need for measurable, teachable, and accessible security practices in multi-agent systems.',
     image: '/src/assets/blog-1.jpg'
-  },
-  {
-    id: '2',
-    title: 'Visualizing Agent Misalignment in Workflow Graphs',
-    date: 'May 28, 2025',
-    description: 'How to use graph visualization techniques to identify potential agent misalignment issues before they cause security problems.',
-    image: '/src/assets/blog-2.jpg'
-  },
-  {
-    id: '3',
-    title: 'Benchmarking Security in Multi-Agent Simulations',
-    date: 'May 15, 2025',
-    description: 'A comprehensive guide to establishing security benchmarks for complex multi-agent systems in pre-deployment environments.',
-    image: '/src/assets/blog-3.jpg'
-  },
-  {
-    id: '4',
-    title: 'OWASP Top 10 for AI Agent Systems',
-    date: 'April 30, 2025',
-    description: 'Adapting the OWASP Top 10 security risks for AI agent systems and how to mitigate them effectively.',
-    image: '/src/assets/blog-4.jpg'
-  },
-  {
-    id: '5',
-    title: 'Securing Agent-to-Agent Communication Channels',
-    date: 'April 22, 2025',
-    description: 'Best practices for implementing secure communication channels between autonomous AI agents in production environments.',
-    image: '/src/assets/blog-5.jpg'
-  },
-  {
-    id: '6',
-    title: 'The Future of AI Safety: Agent Containment Strategies',
-    date: 'April 10, 2025',
-    description: 'Exploring advanced containment strategies to ensure AI agents operate within safe and predictable boundaries.',
-    image: '/src/assets/blog-6.jpg'
   }
 ];
 

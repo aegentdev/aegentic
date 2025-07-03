@@ -74,7 +74,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-details">
                     <h3>Email</h3>
-                    <p>info@aegentic.ai</p>
+                    <p>info@aegentdev.ai</p>
                   </div>
                 </div>
                 
@@ -216,7 +216,7 @@ const Contact = () => {
             <div className="demo-call-container fade-in">
               <h2 className="section-title">Schedule a Demo Call</h2>
               <p className="demo-call-description">
-                Want a personalized walkthrough of our platform? Book a live demo with our team and see how Aegentic can help secure your AI agents.
+                Want a personalized walkthrough of our platform? Book a live demo with our team and see how Aegentdev can help secure your AI agents.
               </p>
               <a href="#" className="btn btn-primary demo-call-btn">Book a Demo</a>
             </div>
@@ -239,7 +239,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="map-address">
-              <h3>Aegentic Headquarters</h3>
+              <h3>Aegentdev Headquarters</h3>
               <p>123 AI Safety Street</p>
               <p>San Francisco, CA 94103</p>
               <p>United States</p>
@@ -253,9 +253,9 @@ const Contact = () => {
           <h2 className="section-title text-center fade-in">Frequently Asked Questions</h2>
           <div className="faq-grid fade-in">
             <div className="faq-item">
-              <h3 className="faq-question">What types of AI systems can Aegentic evaluate?</h3>
+              <h3 className="faq-question">What types of AI systems can Aegentdev evaluate?</h3>
               <p className="faq-answer">
-                Aegentic is designed to evaluate any multi-agent AI system where agents communicate with each other. 
+                Aegentdev is designed to evaluate any multi-agent AI system where agents communicate with each other. 
                 This includes language model agents, reinforcement learning agents, and hybrid systems.
               </p>
             </div>
@@ -277,7 +277,7 @@ const Contact = () => {
             </div>
             
             <div className="faq-item">
-              <h3 className="faq-question">Is Aegentic open source?</h3>
+              <h3 className="faq-question">Is Aegentdev open source?</h3>
               <p className="faq-answer">
                 We maintain both open-source and commercial components. Our core evaluation methodology is open source, 
                 while our advanced diagnostic tools and enterprise features are available through commercial licenses.

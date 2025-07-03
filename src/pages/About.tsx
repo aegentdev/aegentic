@@ -8,7 +8,7 @@ const About = () => {
       <section className="about-hero section" style={{ position: 'relative', overflow: 'hidden' }}>
         <AnimatedHero />
         <div className="container hero-content">
-          <h1 className="page-title fade-in">About Aegentic</h1>
+          <h1 className="page-title fade-in">About Aegentdev</h1>
           <p className="page-subtitle fade-in">
             We're building the future of AI agent security through innovative diagnostics and benchmarks.
           </p>
@@ -21,7 +21,7 @@ const About = () => {
             <div className="about-content fade-in">
               <h2 className="section-title">Our Mission</h2>
               <p>
-                At Aegentic, we believe that the future of AI lies in multi-agent systems that can collaborate, 
+                At Aegentdev, we believe that the future of AI lies in multi-agent systems that can collaborate, 
                 reason, and solve complex problems together. But with this power comes significant risk, 
                 especially when these systems communicate with each other in ways that can lead to unexpected behaviors.
               </p>
@@ -81,7 +81,7 @@ const About = () => {
                 <h3>2025</h3>
                 <h4>Platform Launch</h4>
                 <p>
-                  Launched the Aegentic platform, providing diagnostic tools and security assessments 
+                  Launched the Aegentdev platform, providing diagnostic tools and security assessments 
                   for organizations developing multi-agent AI systems. Established partnerships with 
                   leading AI safety organizations.
                 </p>

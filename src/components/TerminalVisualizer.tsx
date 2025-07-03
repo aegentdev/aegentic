@@ -15,8 +15,8 @@ const TerminalVisualizer = ({ autoStart = true, speed = 50 }: TerminalVisualizer
   const terminalRef = useRef<HTMLDivElement>(null);
   
   const securityChecks = [
-    { command: '> aegentic scan --mode=comprehensive', delay: 1000 },
-    { text: 'Initializing Aegentic Security Scanner v2.5.0...', type: 'info', delay: 800 },
+    { command: '> aegentdev scan --mode=comprehensive', delay: 1000 },
+    { text: 'Initializing Aegentdev Security Scanner v2.5.0...', type: 'info', delay: 800 },
     { text: 'Loading agent communication protocols...', type: 'info', delay: 600 },
     { text: 'Scanning for vulnerabilities in agent mesh...', type: 'info', delay: 1000 },
     { text: '[1/7] Checking prompt injection vulnerabilities...', type: 'check', delay: 1200 },
@@ -102,7 +102,7 @@ const TerminalVisualizer = ({ autoStart = true, speed = 50 }: TerminalVisualizer
           <span className="terminal-button minimize"></span>
           <span className="terminal-button maximize"></span>
         </div>
-        <div className="terminal-title">Aegentic Security Scanner</div>
+        <div className="terminal-title">Aegentdev Security Scanner</div>
       </div>
       <div className="terminal-body" ref={terminalRef}>
         {lines.map((line, index) => {
