@@ -7,9 +7,9 @@ import './Blog.css';
 const blogPosts = [
   {
     id: '1',
-    title: 'Why Prompt Chaining Fails in Agent Meshes',
+    title: 'Towards Measurable Security in Agentic AI',
     date: 'June 10, 2025',
-    description: 'Exploring the security vulnerabilities in traditional prompt chaining methods when applied to complex agent mesh architectures.',
+    description: 'A survey of the current state of Agentic AI security benchmarking, adoption, and the need for measurable, teachable, and accessible security practices in multi-agent systems.',
     image: '/src/assets/blog-1.jpg'
   },
   {

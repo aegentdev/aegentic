@@ -69,7 +69,6 @@ const Navbar = () => {
         </ul>
         
         <div className="navbar-cta">
-          <Link to="/benchmark" className="btn btn-primary">Run Simulation</Link>
         </div>
       </div>
     </nav>

@@ -60,8 +60,8 @@
 }
 
 .filter-button.active {
-  background-color: var(--bronze-brown);
-  border-color: var(--bronze-brown);
+  background-color: #362312;
+  border-color: #362312;
   color: var(--white);
 }
 
@@ -86,8 +86,8 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-sm) var(--space-md);
-  background-color: var(--bronze-brown);
-  border: 1px solid var(--bronze-brown);
+  background-color: #362312;
+  border: 1px solid #362312;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   color: var(--white);
   cursor: pointer;
@@ -95,7 +95,7 @@
 }
 
 .search-button:hover {
-  background-color: #8a6a47;
+  background-color: #24190d;
 }
 
 .blog-grid {
@@ -132,8 +132,8 @@
 }
 
 .pagination-button.active {
-  background-color: var(--bronze-brown);
-  border-color: var(--bronze-brown);
+  background-color: #362312;
+  border-color: #362312;
   color: var(--white);
 }
 

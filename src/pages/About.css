@@ -112,7 +112,7 @@
   left: 50%;
   width: 20px;
   height: 20px;
-  background-color: var(--bronze-brown);
+  background-color: #362312;
   border-radius: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -136,7 +136,7 @@
 
 .timeline-content h3 {
   font-size: var(--font-size-lg);
-  color: var(--bronze-brown);
+  color: #362312;
   margin-bottom: var(--space-xs);
 }
 
@@ -185,7 +185,7 @@
 
 .team-member-role {
   font-size: var(--font-size-sm);
-  color: var(--bronze-brown);
+  color: #362312;
   margin-bottom: var(--space-sm);
   font-weight: 600;
 }
@@ -258,12 +258,12 @@
 
 .cta-buttons .btn-secondary {
   background-color: transparent;
-  color: var(--bronze-brown);
-  border: 1px solid var(--bronze-brown);
+  color: #362312;
+  border: 1px solid #362312;
 }
 
 .cta-buttons .btn-secondary:hover {
-  background-color: var(--bronze-brown);
+  background-color: #362312;
   color: var(--white);
 }
 

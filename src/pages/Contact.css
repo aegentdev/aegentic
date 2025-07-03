@@ -1,6 +1,5 @@
 .contact-page {
   overflow-x: hidden;
-  margin-top: 150px;
 }
 
 .contact-hero {
@@ -105,13 +104,13 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(160, 125, 84, 0.1);
-  color: var(--bronze-brown);
+  background-color: rgba(54, 35, 18, 0.1);
+  color: #362312;
   transition: all var(--transition-fast);
 }
 
 .social-icon:hover {
-  background-color: var(--bronze-brown);
+  background-color: #362312;
   color: var(--white);
   transform: translateY(-3px);
 }
@@ -163,7 +162,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--bronze-brown);
+  border-color: #362312;
 }
 
 .form-group textarea {
@@ -186,7 +185,7 @@
 }
 
 .form-success svg {
-  color: var(--bronze-brown);
+  color: #362312;
   margin-bottom: var(--space-lg);
 }
 

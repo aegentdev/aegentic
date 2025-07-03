@@ -1,87 +1,97 @@
 
 import { useParams, Link } from 'react-router-dom';
 import './BlogPost.css';
+import { marked } from 'marked';
 
 // Mock blog post data
 const blogPostsData = {
   '1': {
-    title: 'Why Prompt Chaining Fails in Agent Meshes',
+    title: 'Towards Measurable Security in Agentic AI',
     date: 'June 10, 2025',
-    author: 'Dr. Sarah Chen',
-    authorRole: 'Chief Security Researcher',
+    author: 'Gauri Sharma',
+    authorRole: 'Student Developer',
     image: '/src/assets/blog-1.jpg',
     content: `
-      <p>As multi-agent systems become increasingly complex, traditional prompt chaining methods are showing critical security vulnerabilities that can compromise entire agent meshes. This article explores why these failures occur and how to mitigate them.</p>
-      
-      <h2>The Problem with Traditional Prompt Chains</h2>
-      
-      <p>Traditional prompt chaining was designed for sequential processing, where each agent in the chain receives input, processes it, and passes output to the next agent. This linear approach works well for simple workflows but breaks down in mesh architectures where agents communicate with multiple other agents simultaneously.</p>
-      
-      <p>In mesh architectures, prompt chains create several security vulnerabilities:</p>
-      
-      <ul>
-        <li><strong>Circular Dependencies:</strong> Agents can create feedback loops that lead to escalating behaviors or resource exhaustion.</li>
-        <li><strong>Context Collapse:</strong> As prompts travel through multiple agents, important security context can be lost or corrupted.</li>
-        <li><strong>Privilege Escalation:</strong> Malicious prompts can accumulate permissions as they travel through agents with different access levels.</li>
-      </ul>
-      
-      <h2>Case Study: The MeshNet Incident</h2>
-      
-      <p>In a recent pre-deployment test, we observed a 7-agent mesh where a simple prompt requesting data analysis eventually resulted in one agent attempting to access administrator credentials. The prompt chain passed through four different agents, each adding its own context and instructions, until the original security constraints were completely lost.</p>
-      
-      <p>This occurred despite each individual agent having proper security measures when tested in isolation. The vulnerability only emerged in the mesh configuration.</p>
-      
-      <h2>Secure Alternatives to Prompt Chaining</h2>
-      
-      <p>Instead of traditional prompt chains, consider these more secure approaches for agent mesh architectures:</p>
-      
-      <h3>1. Context-Preserved Message Passing</h3>
-      
-      <p>Rather than allowing each agent to modify the entire prompt chain, implement a message passing system where the original context and security parameters are preserved in an immutable section of each message.</p>
-      
-      <pre><code>
-      {
-        "original_context": {
-          "security_level": "user",
-          "allowed_actions": ["read_data", "analyze"],
-          "prohibited_actions": ["write", "execute", "elevate"]
-        },
-        "message_chain": [
-          { "agent": "data_retriever", "message": "Retrieve Q2 sales data" },
-          { "agent": "analyzer", "message": "Run regression analysis on retrieved data" }
-        ],
-        "current_message": {
-          "action": "visualize",
-          "parameters": { "type": "bar_chart", "data_source": "analysis_results" }
-        }
-      }
-      </code></pre>
-      
-      <h3>2. Centralized Validation Gateway</h3>
-      
-      <p>Implement a central validation service that checks all inter-agent communications against security policies before allowing messages to be delivered.</p>
-      
-      <h3>3. Capability-Based Security Model</h3>
-      
-      <p>Instead of relying on message content for security decisions, implement a capability-based model where agents can only perform actions they have explicit capability tokens for, and these tokens cannot be transferred through messages.</p>
-      
-      <h2>Implementation Guide</h2>
-      
-      <p>To implement these safer alternatives in your agent mesh:</p>
-      
-      <ol>
-        <li>Audit all agent-to-agent communication paths and document the expected security context for each.</li>
-        <li>Implement immutable security contexts that travel with all messages.</li>
-        <li>Add validation checkpoints that verify security constraints haven't been compromised.</li>
-        <li>Create automated tests that specifically target prompt chain vulnerabilities in mesh configurations.</li>
-        <li>Monitor agent-to-agent communication patterns in real-time to detect unexpected message flows.</li>
-      </ol>
-      
-      <h2>Conclusion</h2>
-      
-      <p>As agent systems grow more complex, we need to move beyond simple prompt chaining to more sophisticated communication protocols that maintain security context across the entire mesh. By implementing context preservation, centralized validation, and capability-based security, you can significantly reduce the risk of security breaches in your multi-agent systems.</p>
-      
-      <p>In our next article, we'll explore visualization techniques that can help identify potential security vulnerabilities in agent communication patterns before they can be exploited.</p>
+# Towards Measurable Security in Agentic AI
+
+Once the domain of experimental prototypes, today’s agents can manage tools, issue commands, and orchestrate complex workflows across multiple components. While functionality and efficiency have been eagerly benchmarked, **security evaluation** is just beginning to gain the structured attention it deserves. Foundational frameworks — such as the <a href="https://vineethsai.github.io/aivss/">OWASP Agentic AI Top 10 Vulnerability Scoring System (AIVSS)</a>, the MAESTRO framework, and the <a href="https://cloudsecurityalliance.org/research/working-groups/ai-safety-initiative">CSA’s Red Teaming Guide</a> — have laid essential groundwork, thanks to the leadership of experts like Ken Huang.
+
+These contributions provide a robust foundation for evaluating agentic risk. Now, the challenge lies in **wider adoption** and integration: building the infrastructure to make vulnerability scoring and quantitative risk assessments routine across ecosystems and diverse contexts. As agentic AI scales, so must our commitment to making its security **measurable, teachable, and accessible**. Automation and developer integration for these risks are critical, making this an exciting space for development.
+
+<figure>
+  <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*WqwYP5kmg1na9jFP" alt="An overview of the AIVSS methodology — https://vineethsai.github.io/aivss/" />
+  <figcaption>An overview of the AIVSS methodology — https://vineethsai.github.io/aivss/</figcaption>
+</figure>
+
+This article surveys the current state of Agentic AI security benchmarking and adoption. With the emergence of infrastructure like <a href="https://www.media.mit.edu/projects/mit-nanda/overview/#:~:text=NANDA%20%28Networked%20Agents%20and%20Decentralized,of%20autonomous%20AI%20agents%20that">MIT’s NANDA</a>, a team at MIT creating the “Internet of AI Agents,” the path is clearer than ever for a standardized approach to security evaluation. The challenge now is not identifying risks — they’re well-documented — but turning that knowledge into **testable, measurable, and repeatable metrics** across ecosystems and contexts. As a student developer, I believe we urgently need to **bring security literacy into the agent-building process**. More and more student internships now ask not for Python fluency, but for experience working with MCP servers — architectures that didn’t even exist a year ago.
+
+<figure>
+  <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*i2I58MrMkdJkd9Qj" alt="NANDA" />
+  <figcaption>[NANDA (Networked Agents And Decentralized AI) builds on Anthropic’s Model Context Protocol (MCP) to create a true Internet of AI Agents. While MCP provides standardized interaction between AI agents, tools and resources, NANDA adds the critical infrastructure needed for distributed agent intelligence at scale. From https://nanda.media.mit.edu/.</figcaption>
+</figure>
+
+NANDA (Networked Agents And Decentralized AI) builds on Anthropic’s Model Context Protocol (MCP) to create a true Internet of AI Agents. While MCP provides standardized interaction between AI agents, tools and resources, NANDA adds the critical infrastructure needed for distributed agent intelligence at scale. From https://nanda.media.mit.edu/.
+
+This is especially urgent as agentic systems grow more autonomous, connected, and permissioned. When agents can write to databases, run shell commands, or coordinate across frameworks, their vulnerabilities become networked liabilities. As OWASP AIVSS and the CSA Agentic AI Red Teaming Guide both outline, an agent’s threat surface is shaped not just by its code, but by its autonomy, memory, tool usage, and delegation behavior.
+
+## Understanding Multi-Agent System Infrastructure
+
+## Current Threats in Multi-Agent Workflows
+The architecture behind multi-agent systems (MAS) is undergoing rapid evolution, moving from siloed implementations to visions of web-scale interoperability. At the core of this transformation is the recognition that agents are no longer single-threaded tools operating in isolation — they’re collaborative, persistent, and increasingly responsible for orchestrating mission-critical workflows.
+
+Several architectural protocols have emerged to facilitate coordination across autonomous agents:
+
+- Model Context Protocol (MCP) by Anthropic enables agents to interface with tools and context servers, focusing on agent-to-environment communication.
+- Agent2Agent (A2A) by Google introduces structured inter-agent communication via JSON-RPC and AgentCards, enabling agents to negotiate, delegate, and verify identities.
+- Agent Communication Protocol (ACP) from IBM embraces RESTful paradigms for agent messaging and orchestration, emphasizing developer-accessible infrastructure.
+- NANDA, MIT’s experimental agent registry, builds on top of MCP to support distributed agent discovery and verifiable capability declarations through a federated system of AgentFacts.
+Here is a great overview of more protocols and their use cases by Yang et al’s A Survey of AI Agent Protocols:
+
+<figure>
+  <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LBEj8Kl00SJP3kbXrqq35A.png" alt="Overview of popular agent protocols. From A Survey of AI Agent Protocols." />
+  <figcaption>Overview of popular agent protocols. <a href="https://arxiv.org/abs/2504.16736">From A Survey of AI Agent Protocols</a>.</figcaption>
+</figure>
+
+Also, a great overview of how AI development has evolved over the past few years from the same paper:
+
+<figure>
+  <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*D1VwITPWAnNnfAWJvYDdwA.png" alt="A timeline of the development of agent protocols." />
+  <figcaption>A timeline of the development of agent protocols. From A Survey of AI Agent Protocols.</figcaption>
+</figure>
+
+Some of these protocols admittedly share similarities. For instance, A2A, MCP, and ACP each support some core primitives — identity, messaging, and capability expression — but still have space to develop in discovery, state persistence, and memory consistency. **Despite their strengths, these frameworks may operate in isolation**. The result is a fragmented ecosystem where interoperability is the exception, not the norm. In fact, NANDA’s paper calls for <a href="https://github.com/aidecentralized/nandapapers/blob/main/Collaborative%20Agentic%20AI%20Needs%20Interoperability%20Across%20Ecosystems.pdf">interoperability across ecosystems</a>, asking for the “adoption of minimal standards” rather than waiting for dominant solutions to emerge.
+
+If you’re interested in understanding how some of the current protocols work together, here’s another great <a href="https://medium.com/@gaurisharma1686/towards-measurable-security-in-agentic-ai-2d0cc4147fe8#:~:text=here%E2%80%99s%20another%20great-,article,-.%20To%20quote%20the">article</a>. To quote the author, Edwin Lisowski, “In short: we’re early. But how we build and adopt these standards now will shape whether AI agents become a cohesive ecosystem — or a patchwork of silos.” As interoperability evolves, it will increasingly shape the security architectures we design and deploy.
+
+## Current Threats in Multi-Agent Workflows
+
+<a href="https://aivss.owasp.org">OWASP’s</a> Agentic AI Top 10 security risks covers the most imminent threats in these systems. The group’s initial publication is slated for release in the upcoming weeks, but their ongoing work and GitHub are available at aivss.owasp.org. The core idea is straightforward: every interaction layer — whether between agents, tools, databases, or users — introduces potential vulnerabilities unless explicitly secured. OWASP AIVSS is developing a security calculator to quantify agentic risk in a standardized, actionable format — laying the groundwork for consistent evaluation across systems. It will be equally important to track how automation evolves in this space, potentially enabling real-time scoring, integration into CI/CD pipelines, and automated risk mitigation. Here’s a summary of AIVSS’s outlined risks:
+
+### Top 10 Agentic AI Threats (AIVSS):
+
+1. <strong>Agentic AI Tool Misuse</strong> — When AI agents interact with external tools, flawed logic, malicious tool registration, or adversarial inputs can cause unintended or harmful actions. A notable example is tool squatting, where agents are tricked into calling malicious tools due to deceptive naming or schema manipulation.
+2. <strong>Agent Access Control Violation</strong> — Attackers may exploit or override an agent’s permissions, causing it to perform tasks outside its authorized scope. These breaches often go unnoticed because the agent appears to behave legitimately while conducting unauthorized actions. 
+3. <strong>Agent Impact Chain and Blast Radius</strong> — A compromise in one agent can ripple across connected systems, escalating a local vulnerability into a system-wide failure. This is especially dangerous in interconnected ecosystems where agents hold cross-domain access.  
+4. <strong>Agent Orchestration and Multi-Agent Exploitation</strong> — Security flaws in how agents coordinate and trust one another can be exploited to manipulate or hijack multi-agent workflows. These interactions form complex, distributed attack surfaces vulnerable to system-wide disruption.  
+5. <strong>Deepfake Agent Identity</strong> — AI-generated impersonation allows agents to present fake identities or credentials, deceiving both humans and other systems. This manipulation undermines trust and can lead to fraud, unauthorized access, or social engineering attacks.
+6. <strong>Agent Memory and Context Manipulation</strong> — Attackers can tamper with how agents store or recall context, leading to compromised decision-making and leaked information. Since agents rely on persistent memory, such manipulation can have long-term effects.
+7. <strong>Agent Critical Systems Interaction</strong> — When agents interface with operational or physical infrastructure, errors or attacks can lead to real-world consequences. These include malfunctions, safety risks, or unauthorized control over sensitive systems.
+8. <strong>Agent Supply Chain and Dependency Attacks</strong> — Vulnerabilities in third-party tools, libraries, or infrastructure supporting AI agents can be exploited to introduce malware or backdoors. These attacks often compromise multiple agents at once by targeting trusted development pipelines.
+9. <strong>Agent Untraceability</strong> — Agents often assume temporary roles or permissions, making it hard to trace actions back to a specific user or origin. This lack of accountability complicates auditing, incident response, and forensic analysis.
+10. <strong>Agent Goal and Instruction Manipulation</strong> — By manipulating how agents interpret commands, attackers can cause them to behave maliciously while appearing normal. This often involves exploiting natural language processing to inject harmful intent into otherwise benign-looking instructions.
+
+<figure>
+  <img src="https://medium.com/@gaurisharma1686/towards-measurable-security-in-agentic-ai-2d0cc4147fe8#:~:text=By%20manipulating%20how%20agents%20interpret%20commands%2C%20attackers%20can%20cause%20them%20to%20behave%20maliciously%20while%20appearing%20normal.%20This%20often%20involves%20exploiting%20natural%20language%20processing%20to%20inject%20harmful%20intent%20into%20otherwise%20benign%2Dlooking%20instructions." alt="The AIVSS Framework — https://vineethsai.github.io/aivss/" />
+  <figcaption>The AIVSS Framework — https://vineethsai.github.io/aivss/ </figcaption>
+</figure>
+
+---
+
+## Quantitative Security Benchmarking Efforts
+
+As OWASP AIVSS’s work underscores, security in multi-agent systems (MAS) must be measurable to be actionable. While early benchmarks like HarmBench, AgentHarm, COMMA, and Cybench offer frameworks for assessing harmful LLM behavior, they primarily target single-agent scenarios or isolated adversarial robustness. What’s missing is a structured approach to evaluating the compounded risks that emerge when agents coordinate, delegate, and operate in interconnected environments — a critical gap and a ripe area for development.
+
+The path forward is clear: agent security must be built in, not bolted on. IDE plugins, CI/CD hooks, and agent graph visualizers that surface stale permissions or insecure delegation chains will be essential to making MAS security both actionable and teachable. Just as crucial is engaging students and early developers in this foundational work — helping them build awareness of infrastructure-level risks and ensuring their research and practices stay relevant in a landscape increasingly shaped by code generation tools and autonomous development practices.
     `
   },
   '2': {
@@ -223,7 +233,7 @@ const BlogPost = () => {
       <div className="blog-post-content section">
         <div className="container">
           <div className="blog-post-container fade-in">
-            <article className="blog-post-article" dangerouslySetInnerHTML={{ __html: post.content }}></article>
+            <article className="blog-post-article" dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></article>
             
             <div className="blog-post-share">
               <span>Share this article:</span>

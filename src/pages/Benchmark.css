@@ -54,8 +54,8 @@
 }
 
 .tab-button.active {
-  border-bottom: 2px solid var(--bronze-brown);
-  color: var(--bronze-brown);
+  border-bottom: 2px solid #362312;
+  color: #362312;
 }
 
 /* Updated grid layout with wider cards */
@@ -111,7 +111,7 @@
 .stat-value {
   font-size: var(--font-size-xxxl);
   font-weight: 700;
-  color: var(--bronze-brown);
+  color: #362312;
   line-height: 1;
   margin-bottom: var(--space-sm);
 }
@@ -207,7 +207,7 @@
   padding: var(--space-md);
   border-radius: var(--radius-md);
   background-color: var(--neutral-light);
-  border-left: 4px solid var(--bronze-brown);
+  border-left: 4px solid #362312;
 }
 
 .recommendation-title {
@@ -276,12 +276,12 @@
 
 .cta-buttons .btn-secondary {
   background-color: transparent;
-  color: var(--bronze-brown);
-  border: 1px solid var(--bronze-brown);
+  color: #362312;
+  border: 1px solid #362312;
 }
 
 .cta-buttons .btn-secondary:hover {
-  background-color: var(--bronze-brown);
+  background-color: #362312;
   color: var(--white);
 }
 

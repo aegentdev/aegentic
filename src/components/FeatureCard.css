@@ -22,10 +22,10 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background-color: rgba(160, 125, 84, 0.1);
+  background-color: rgba(54, 35, 18, 0.1);
   border-radius: var(--radius-md);
   margin-bottom: var(--space-md);
-  color: var(--bronze-brown);
+  color: #362312;
 }
 
 .feature-card h3 {

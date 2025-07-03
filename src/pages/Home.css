@@ -83,7 +83,7 @@
 }
 
 .terminal-features li svg {
-  color: var(--bronze-brown);
+  color: #362312;
   flex-shrink: 0;
 }
 
@@ -145,7 +145,7 @@
 }
 
 .dashboard-features li svg {
-  color: var(--bronze-brown);
+  color: #362312;
   flex-shrink: 0;
 }
 
@@ -184,12 +184,12 @@
 
 .cta-buttons .btn-secondary {
   background-color: transparent;
-  color: var(--bronze-brown);
-  border: 1px solid var(--bronze-brown);
+  color: #362312;
+  border: 1px solid #362312;
 }
 
 .cta-buttons .btn-secondary:hover {
-  background-color: var(--bronze-brown);
+  background-color: #362312;
   color: var(--white);
 }
 

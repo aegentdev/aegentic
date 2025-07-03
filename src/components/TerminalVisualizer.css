@@ -135,7 +135,7 @@
 }
 
 .terminal-button-scan {
-  background-color: var(--bronze-brown);
+  background-color: #362312;
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-md);
@@ -147,5 +147,5 @@
 }
 
 .terminal-button-scan:hover {
-  background-color: #8a6a47;
+  background-color: #24190d;
 }
