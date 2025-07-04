@@ -8,22 +8,12 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <Link to="/" className="logo-text">Aegentic</Link>
+            <Link to="/" className="logo-text">aegent/dev</Link>
             <p className="footer-tagline">
               Pre-deployment agent safety starts here.
             </p>
           </div>
           
-          <div className="footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/benchmark">Benchmark</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </div>
           
           <div className="footer-social">
             <h4>Connect</h4>

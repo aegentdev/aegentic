@@ -16,7 +16,7 @@
 }
 
 .hero-title {
-  font-size: var(--font-size-xxxl);
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: var(--space-lg);
   text-align: center;
@@ -102,12 +102,15 @@
 .section-title {
   margin-bottom: var(--space-xl);
   color: var(--text-dark);
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 /* Dashboard Section */
 .dashboard-section {
   background-color: var(--white);
   padding: var(--space-xxl) 0;
+
 }
 
 .dashboard-content {

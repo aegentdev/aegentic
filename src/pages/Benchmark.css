@@ -61,16 +61,14 @@
 /* Updated grid layout with wider cards */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-lg);
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 2.5rem;
+  padding-right: 1.5rem;
 }
 
-/* Remove card spanning so all cards are the same width */
-.dashboard-grid .dashboard-card:nth-child(1),
-.dashboard-grid .dashboard-card:nth-child(5),
-.dashboard-grid .dashboard-card:nth-child(6) {
-  grid-column: span 1;
-}
 
 .dashboard-card {
   background-color: var(--white);
@@ -78,6 +76,7 @@
   padding: var(--space-lg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -283,6 +282,16 @@
 .cta-buttons .btn-secondary:hover {
   background-color: #362312;
   color: var(--white);
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1200px) {
