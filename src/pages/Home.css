@@ -230,3 +230,64 @@
     margin: 0 auto;
   }
 }
+
+.brown-bg {
+  background: #24190d;
+}
+
+.our-story-section {
+  color: #fff;
+}
+
+.our-story-section .section-title {
+  color: #fff;
+}
+
+.our-story-text p {
+  color: #fff;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.aegis-dictionary-box {
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 200px;
+  max-width: 320px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aegis-word {
+  font-size: 2.7rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #fff;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: 0.2rem;
+}
+
+.aegis-pronounce {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.aegis-noun {
+  font-size: 1rem;
+  font-style: italic;
+  color: #e0e0e0;
+  margin-bottom: 0.7rem;
+  text-transform: lowercase;
+}
+
+.aegis-def {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 300;
+  margin-top: 0.2rem;
+}

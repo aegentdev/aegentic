@@ -24,6 +24,26 @@ const Home = () => {
         </div>
       </section>
       
+      {/* Our Story Section */}
+      <section className="our-story-section section brown-bg">
+        <div className="container our-story-content" style={{ display: 'flex', alignItems: 'center', gap: '2.5rem', flexWrap: 'wrap' }}>
+          <div className="our-story-text" style={{ flex: 1, minWidth: 260 }}>
+            <h2 className="section-title fade-in">Our Story</h2>
+            <p className="fade-in">
+              Inspired by the <strong>aegis</strong>—the mythic shield of protection—<strong>aegent/dev</strong> exists to proactively shield your multi-agent systems. We help developers harden agent interactions and build a secure foundation for AI, before threats ever arise.
+            </p>
+          </div>
+          <div className="our-story-graphic fade-in" style={{ flex: '0 0 320px', display: 'flex', justifyContent: 'center', alignItems: 'center', minWidth: 220 }}>
+            <div className="aegis-dictionary-box">
+              <div className="aegis-word">ae·gis</div>
+              <div className="aegis-pronounce">/ˈējəs/</div>
+              <div className="aegis-noun">noun</div>
+              <div className="aegis-def">the protection, backing, or support of a particular person or organization.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Terminal Section */}
       <section className="terminal-section section">
         <div className="container">
