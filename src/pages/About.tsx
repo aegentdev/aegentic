@@ -110,8 +110,8 @@ const About = () => {
           <div className="team-grid fade-in">
             <div className="team-member">
               <div className="team-member-image"></div>
-              <h3 className="team-member-name">Dr. Sarah Chen</h3>
-              <p className="team-member-role">Founder & Chief Scientist</p>
+              <h3 className="team-member-name">Gauri Sharma</h3>
+              <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
                 Former AI safety researcher at DeepMind with expertise in multi-agent systems and alignment.
               </p>
@@ -119,8 +119,8 @@ const About = () => {
             
             <div className="team-member">
               <div className="team-member-image"></div>
-              <h3 className="team-member-name">Michael Rodriguez</h3>
-              <p className="team-member-role">Lead Security Engineer</p>
+              <h3 className="team-member-name">Vidhi Kulkarni</h3>
+              <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
                 Security expert with background in adversarial testing and vulnerability assessment.
               </p>
@@ -128,21 +128,13 @@ const About = () => {
             
             <div className="team-member">
               <div className="team-member-image"></div>
-              <h3 className="team-member-name">Dr. Alex Patel</h3>
-              <p className="team-member-role">Research Director</p>
+              <h3 className="team-member-name">Miles King</h3>
+              <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
                 Specialist in formal verification of multi-agent communication protocols and safety guarantees.
               </p>
             </div>
             
-            <div className="team-member">
-              <div className="team-member-image"></div>
-              <h3 className="team-member-name">Olivia Washington</h3>
-              <p className="team-member-role">Product Lead</p>
-              <p className="team-member-bio">
-                Experienced product manager focused on making complex security tools accessible and actionable.
-              </p>
-            </div>
           </div>
         </div>
       </section>

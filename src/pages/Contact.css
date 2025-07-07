@@ -96,10 +96,15 @@
   display: flex;
   gap: var(--space-md);
 }
+.contact-social-icons {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
 
 .social-icon {
-  display: flex;
-  align-items: center;
+  display: flex; 
+  align-items: center; 
   justify-content: center;
   width: 40px;
   height: 40px;
@@ -108,7 +113,20 @@
   color: #362312;
   transition: all var(--transition-fast);
 }
-
+.contact-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(54, 35, 18, 0.1);
+  color: #362312;
+  transition: all var(--transition-fast);
+  
+}
+.social-icon-container {
+  display:flex;
+  gap: 5px;
+  align-items: center;
+}
 .social-icon:hover {
   background-color: #362312;
   color: var(--white);
@@ -280,6 +298,7 @@
 .contact-faq {
   background-color: var(--white);
   padding: var(--space-xxl) 0;
+  margin-top: 20px;
 }
 
 .contact-faq .section-title {

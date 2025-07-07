@@ -10,7 +10,7 @@ const blogPostsData = {
     date: 'June 10, 2025',
     author: 'Gauri Sharma',
     authorRole: 'Student Developer',
-    image: '/src/assets/blog-1.jpg',
+    image: '/src/assets/blog-1-card.jpg',
     content: `
 # Towards Measurable Security in Agentic AI
 
@@ -81,8 +81,8 @@ If you’re interested in understanding how some of the current protocols work t
 10. <strong>Agent Goal and Instruction Manipulation</strong> — By manipulating how agents interpret commands, attackers can cause them to behave maliciously while appearing normal. This often involves exploiting natural language processing to inject harmful intent into otherwise benign-looking instructions.
 
 <figure>
-  <img src="https://medium.com/@gaurisharma1686/towards-measurable-security-in-agentic-ai-2d0cc4147fe8#:~:text=By%20manipulating%20how%20agents%20interpret%20commands%2C%20attackers%20can%20cause%20them%20to%20behave%20maliciously%20while%20appearing%20normal.%20This%20often%20involves%20exploiting%20natural%20language%20processing%20to%20inject%20harmful%20intent%20into%20otherwise%20benign%2Dlooking%20instructions." alt="The AIVSS Framework — https://vineethsai.github.io/aivss/" />
-  <figcaption>The AIVSS Framework — https://vineethsai.github.io/aivss/ </figcaption>
+  <img src="/src/assets/blog-7.jpg"/>
+  <figcaption style="justify-self:center">The AIVSS Framework — <a href="https://vineethsai.github.io/aivss">https://vineethsai.github.io/aivss/</a> </figcaption>
 </figure>
 
 ---

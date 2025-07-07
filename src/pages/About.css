@@ -155,13 +155,15 @@
 .about-team {
   background-color: var(--white);
   padding: var(--space-xxl) 0;
+  
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
   margin-top: var(--space-xl);
+  justify-self: center;
 }
 
 .team-member {

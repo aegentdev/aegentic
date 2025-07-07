@@ -15,7 +15,7 @@ const Home = () => {
         <div className="container hero-content">
           <h1 className="hero-title fade-in">Pre-Deployment Agent Safety Starts Here.</h1>
           <p className="hero-subtitle fade-in">
-            aegent/dev builds diagnostic tools and security benchmarks to ensure agent-to-agent communication is safe before your AI systems ever go live.
+            We build diagnostic tools and security benchmarks to ensure agent-to-agent communication is safe before your AI systems ever go live.
           </p>
           <div className="hero-buttons fade-in">
             
@@ -30,7 +30,7 @@ const Home = () => {
           <div className="our-story-text" style={{ flex: 1, minWidth: 260 }}>
             <h2 className="section-title fade-in">Our Story</h2>
             <p className="fade-in">
-              Inspired by the <strong>aegis</strong>—the mythic shield of protection—<strong>aegent/dev</strong> exists to proactively shield your multi-agent systems. We help developers harden agent interactions and build a secure foundation for AI, before threats ever arise.
+              Inspired by the <strong>aegis</strong>—the mythic shield of protection—<strong>Aegent</strong> exists to proactively shield your multi-agent systems. We help developers harden agent interactions and build a secure foundation for AI, before threats ever arise.
             </p>
           </div>
           <div className="our-story-graphic fade-in" style={{ flex: '0 0 320px', display: 'flex', justifyContent: 'center', alignItems: 'center', minWidth: 220 }}>
@@ -167,8 +167,8 @@ const Home = () => {
               Start with a free security assessment and discover potential vulnerabilities in your agent communication systems.
             </p>
             <div className="cta-buttons">
-              <Link to="/benchmark" className="btn btn-primary">Run Free Assessment</Link>
-              <Link to="/contact" className="btn btn-secondary">Contact Our Team</Link>
+              <a href="/benchmark" className="btn btn-primary">Run Free Assessment</a>
+              <a href="/contact" className="btn btn-secondary">Contact Our Team</a>
             </div>
           </div>
         </div>

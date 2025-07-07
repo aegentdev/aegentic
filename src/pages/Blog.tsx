@@ -10,7 +10,7 @@ const blogPosts = [
     title: 'Towards Measurable Security in Agentic AI',
     date: 'June 10, 2025',
     description: 'A survey of the current state of Agentic AI security benchmarking, adoption, and the need for measurable, teachable, and accessible security practices in multi-agent systems.',
-    image: '/src/assets/blog-1.jpg'
+    image: '/src/assets/blog-1-card.jpg'
   }
 ];
 
@@ -62,20 +62,7 @@ const Blog = () => {
             ))}
           </div>
           
-          <div className="blog-pagination fade-in">
-            <button className="pagination-button active">1</button>
-            <button className="pagination-button">2</button>
-            <button className="pagination-button">3</button>
-            <span className="pagination-ellipsis">...</span>
-            <button className="pagination-button">10</button>
-            <button className="pagination-button next">
-              Next
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-          </div>
+          
         </div>
       </section>
       

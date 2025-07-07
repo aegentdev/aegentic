@@ -48,7 +48,7 @@ const Benchmark = () => {
             </button>
           </div>
           
-          <div className="dashboard-content fade-in">
+          <div >
             {activeTab === 'overview' && (
               <div className="overview-tab">
                 <div className="dashboard-grid">
