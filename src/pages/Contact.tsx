@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Contact.css';
 import AnimatedHero from '../components/AnimatedHero';
+import { InlineWidget } from "react-calendly";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,7 +58,7 @@ const Contact = () => {
       <section className="contact-content section">
         <div className="container">
           <div className="contact-grid">
-            <div className="contact-info fade-in">
+            <div className="contact-form-container fade-in">
               <h2 className="section-title">Contact Information</h2>
               <p className="contact-description">
                 Our team is here to help with any questions about our agent security tools, 
@@ -74,7 +75,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-details">
                     <h3>Email</h3>
-                    <a href="mailto:aegentdev@gmail.com">aegentdev@gmail.com</a>
+                    <a href="mailto:aegentdev@gmail.com" itemID="mail-link">aegentdev@gmail.com</a>
                   </div>
                 </div>
                 
@@ -108,43 +109,28 @@ const Contact = () => {
                 <h3>Connect With Us</h3>
                 <div className="contact-social-icons">
                   <div className="social-icon-container">
-                  <a href="https://github.com/aegentdev" className="social-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                  </a>
-                  <p>Github</p>
+                    <a href="https://github.com/aegentdev" className="social-icon">
+                      <img className="social-icon-image" src="src/assets/github-icon.jpg" alt="Github" />
+                    </a>
+                    <p className="social-link-label">Github</p>
                   </div>
                   <div className="social-icon-container">
-                  <a href="https://www.linkedin.com/in/vidhi-kulkarni/" className="social-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-
-                  <p>Vidhi LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/vidhi-kulkarni/" className="social-icon">
+                      <img className="social-icon-image" src="src/assets/linkedin-icon.jpg" alt="Vidhi LinkedIn" />
+                    </a>
+                    <p className="social-link-label">Vidhi LinkedIn</p>
                   </div>
                   <div className="social-icon-container">
-                  <a href="https://www.linkedin.com/in/gs-softwaredev/" className="social-icon"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                  <p>Gauri LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/gs-softwaredev/" className="social-icon"> 
+                      <img className="social-icon-image" src="src/assets/linkedin-icon.jpg" alt="Gauri LinkedIn" />
+                    </a>
+                    <p className="social-link-label">Gauri LinkedIn</p>
                   </div>
                   <div className="social-icon-container">
-                  <a href="https://www.linkedin.com/in/miles-king0/" className="social-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                  <p>Miles LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/miles-king0/" className="social-icon">
+                      <img className="social-icon-image" src="src/assets/linkedin-icon.jpg" alt="Miles LinkedIn" />
+                    </a>
+                    <p className="social-link-label">Miles LinkedIn</p>
                   </div>
                 </div>
               </div>
@@ -240,7 +226,10 @@ const Contact = () => {
               <p className="demo-call-description">
                 Want a personalized walkthrough of our platform? Book a live demo with our team and see how Aegentdev can help secure your AI agents.
               </p>
-              <a href="#" className="btn btn-primary demo-call-btn">Book a Demo</a>
+              {/* Calendly Inline Embed */}
+              <div className="calendly-inline-widget" style={{ minWidth: '320px', height: '630px' }}>
+                <InlineWidget url="https://calendly.com/gsharma-fusen/30min?month=2025-06" />
+              </div>
             </div>
           </div>
         </div>

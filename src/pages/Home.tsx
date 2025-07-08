@@ -110,7 +110,7 @@ const Home = () => {
             <FeatureCard 
               icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>}
               title="OWASP/NIST Compliance"
-              description="Ensure your agent systems meet industry security standards and compliance requirements."
+              description="Ensure your agent systems meet industry security standards and compliance frameworks."
             />
             <FeatureCard 
               icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>}
@@ -129,7 +129,7 @@ const Home = () => {
               <h2 className="section-title">Visualize Agent Communication Risks</h2>
               <p>
                 Our interactive dashboard provides real-time visualization of agent communication patterns, 
-                risk assessment, and security vulnerabilities. Identify potential threats before they become problems.
+                risk assessment, and security vulnerabilities. Identify threats before your system is compromised.
               </p>
               <ul className="dashboard-features">
                 <li>
@@ -138,16 +138,16 @@ const Home = () => {
                 </li>
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Risk scoring and vulnerability assessment
+                  Vulnerability assessment and risk scoring
                 </li>
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   Automated threat detection and alerts
                 </li>
-                <li>
+                {/* <li>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   Historical data analysis and trend reporting
-                </li>
+                </li> */}
               </ul>
               <Link to="/benchmark" className="btn btn-primary">Explore Dashboard</Link>
             </div>

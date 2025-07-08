@@ -39,7 +39,7 @@ const About = () => {
             
             <div className="about-image fade-in">
               <div className="image-container">
-                <div className="image-overlay"></div>
+                <img className="image-overlay" src="src/assets/about-page-filler.jpg"></img>
               </div>
             </div>
           </div>
@@ -109,29 +109,29 @@ const About = () => {
           <h2 className="section-title text-center fade-in">Our Team</h2>
           <div className="team-grid fade-in">
             <div className="team-member">
-              <div className="team-member-image"></div>
+                <img className="team-member-image" src="src/assets/gauri-photo.jpg"></img>
               <h3 className="team-member-name">Gauri Sharma</h3>
               <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
-                Former AI safety researcher at DeepMind with expertise in multi-agent systems and alignment.
+                Personal description.
               </p>
             </div>
             
             <div className="team-member">
-              <div className="team-member-image"></div>
+                <img className="team-member-image" src="src/assets/vidhi-photo.jpg"></img>
               <h3 className="team-member-name">Vidhi Kulkarni</h3>
               <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
-                Security expert with background in adversarial testing and vulnerability assessment.
+              Personal description.
               </p>
             </div>
             
             <div className="team-member">
-              <div className="team-member-image"></div>
+                <img className="team-member-image" src="/src/assets/miles-photo.jpg"></img>
               <h3 className="team-member-name">Miles King</h3>
               <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
-                Specialist in formal verification of multi-agent communication protocols and safety guarantees.
+              Personal description.
               </p>
             </div>
             
@@ -144,21 +144,29 @@ const About = () => {
           <h2 className="section-title text-center fade-in">Our Partners & Affiliations</h2>
           <div className="partners-grid fade-in">
             <div className="partner">
-              <div className="partner-logo"></div>
+              <img className="partner-logo" src="src/assets/ai-safety-institute.jpg"></img>
               <h3 className="partner-name">AI Safety Institute</h3>
             </div>
             <div className="partner">
-              <div className="partner-logo"></div>
+              <img className="partner-logo" src="src/assets/center-for-ai-security.jpg"></img>
               <h3 className="partner-name">Center for AI Security</h3>
             </div>
-            <div className="partner">
-              <div className="partner-logo"></div>
+             {/* <div className="partner">
+              <img className="partner-logo"></img>
               <h3 className="partner-name">Global AI Standards Organization</h3>
             </div>
             <div className="partner">
-              <div className="partner-logo"></div>
+              <img className="partner-logo"></img>
               <h3 className="partner-name">Tech Safety Alliance</h3>
-            </div>
+            </div>  */}
+            <div className="partner">
+              <img className="partner-logo" src="src/assets/NANDA.jpg"></img>
+              <h3 className="partner-name">NANDA International</h3>
+            </div> 
+            <div className="partner">
+              <img className="partner-logo" src="src/assets/fusen-world.jpg"></img>
+              <h3 className="partner-name">Fusen World</h3>
+            </div> 
           </div>
         </div>
       </section>
@@ -171,8 +179,8 @@ const About = () => {
               We're always looking for talented researchers, engineers, and organizations to collaborate with.
             </p>
             <div className="cta-buttons">
-              <Link to="/contact" className="btn btn-primary">Contact Us</Link>
-              <a href="#" className="btn btn-secondary">View Open Positions</a>
+              <a href="/contact" className="btn btn-primary">Contact Us</a>
+              {/* <a href="#" className="btn btn-secondary">View Open Positions</a> */}
             </div>
           </div>
         </div>
