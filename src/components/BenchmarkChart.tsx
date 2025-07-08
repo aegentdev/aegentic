@@ -53,21 +53,25 @@ const BenchmarkChart = ({ data, title, type }: BenchmarkChartProps) => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    
-    // Set canvas dimensions
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
-    
+
+    // High-DPI fix
+    const dpr = window.devicePixelRatio || 1;
+    const displayWidth = canvas.clientWidth;
+    const displayHeight = canvas.clientHeight;
+    canvas.width = displayWidth * dpr;
+    canvas.height = displayHeight * dpr;
+    ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset any existing transforms
+    ctx.scale(dpr, dpr);
+
     // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+    ctx.clearRect(0, 0, displayWidth, displayHeight);
+
     if (type === 'bar') {
-      drawBarChart(ctx, chartData, canvas.width, canvas.height);
+      drawBarChart(ctx, chartData, displayWidth, displayHeight);
     } else if (type === 'radar') {
-      drawRadarChart(ctx, chartData, canvas.width, canvas.height);
+      drawRadarChart(ctx, chartData, displayWidth, displayHeight);
     }
   }, [chartData, type]);
   
@@ -139,13 +143,6 @@ const BenchmarkChart = ({ data, title, type }: BenchmarkChartProps) => {
         height - padding - barHeight - 5
       );
     });
-    
-    // Chart title
-    ctx.fillStyle = '#4D4C4B';
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
-    ctx.fillText(title, width / 2, 20);
   };
   
   const drawRadarChart = (ctx: CanvasRenderingContext2D, data: ChartData, width: number, height: number) => {
@@ -240,37 +237,12 @@ const BenchmarkChart = ({ data, title, type }: BenchmarkChartProps) => {
         ctx.fill();
       });
     });
-    
-    // Chart title
-    ctx.fillStyle = '#4D4C4B';
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
-    ctx.fillText(title, width / 2, 20);
-    
-    // Legend
-    const legendX = width - 150;
-    const legendY = 40;
-    
-    data.datasets.forEach((dataset, i) => {
-      const y = legendY + i * 25;
-      
-      // Color box
-      ctx.fillStyle = dataset.color;
-      ctx.fillRect(legendX, y, 15, 15);
-      
-      // Label
-      ctx.fillStyle = '#4D4C4B';
-      ctx.font = '12px Inter, sans-serif';
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(dataset.label, legendX + 25, y + 7.5);
-    });
   };
   
   return (
-    <div className="benchmark-chart">
-      <canvas ref={canvasRef} className="chart-canvas"></canvas>
+    <div className="benchmark-chart-container">
+      <div className="benchmark-chart-title" style={{ fontWeight: 600, fontSize: 20, textAlign: 'center', marginBottom: 12, color: '#222' }}>{title}</div>
+      <canvas ref={canvasRef} style={{ width: '100%', height: 400, display: 'block' }} />
     </div>
   );
 };
