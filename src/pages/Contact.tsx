@@ -110,25 +110,25 @@ const Contact = () => {
                 <div className="contact-social-icons">
                   <div className="social-icon-container">
                     <a href="https://github.com/aegentdev" className="social-icon">
-                      <img className="social-icon-image" src="src/assets/github-icon.jpg" alt="Github" />
+                      <img className="social-icon-image" src="/github-icon.jpg" alt="Github" />
                     </a>
                     <p className="social-link-label">Github</p>
                   </div>
                   <div className="social-icon-container">
                     <a href="https://www.linkedin.com/in/vidhi-kulkarni/" className="social-icon">
-                      <img className="social-icon-image" src="src/assets/linkedin-icon.jpg" alt="Vidhi LinkedIn" />
+                      <img className="social-icon-image" src="/linkedin-icon.jpg" alt="Vidhi LinkedIn" />
                     </a>
                     <p className="social-link-label">Vidhi LinkedIn</p>
                   </div>
                   <div className="social-icon-container">
                     <a href="https://www.linkedin.com/in/gs-softwaredev/" className="social-icon"> 
-                      <img className="social-icon-image" src="src/assets/linkedin-icon.jpg" alt="Gauri LinkedIn" />
+                      <img className="social-icon-image" src="/linkedin-icon.jpg" alt="Gauri LinkedIn" />
                     </a>
                     <p className="social-link-label">Gauri LinkedIn</p>
                   </div>
                   <div className="social-icon-container">
                     <a href="https://www.linkedin.com/in/miles-king0/" className="social-icon">
-                      <img className="social-icon-image" src="src/assets/linkedin-icon.jpg" alt="Miles LinkedIn" />
+                      <img className="social-icon-image" src="/linkedin-icon.jpg" alt="Miles LinkedIn" />
                     </a>
                     <p className="social-link-label">Miles LinkedIn</p>
                   </div>

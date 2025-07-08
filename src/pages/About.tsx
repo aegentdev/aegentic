@@ -39,7 +39,7 @@ const About = () => {
             
             <div className="about-image fade-in">
               <div className="image-container">
-                <img className="image-overlay" src="src/assets/about-page-filler.jpg"></img>
+                <img className="image-overlay" src="/about-page-filler.jpg" />
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ const About = () => {
           <h2 className="section-title text-center fade-in">Our Team</h2>
           <div className="team-grid fade-in">
             <div className="team-member">
-                <img className="team-member-image" src="src/assets/gauri-photo.jpg"></img>
+                <img className="team-member-image" src="/gauri-photo.jpg" />
               <h3 className="team-member-name">Gauri Sharma</h3>
               <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
@@ -118,7 +118,7 @@ const About = () => {
             </div>
             
             <div className="team-member">
-                <img className="team-member-image" src="src/assets/vidhi-photo.jpg"></img>
+                <img className="team-member-image" src="/vidhi-photo.jpg" />
               <h3 className="team-member-name">Vidhi Kulkarni</h3>
               <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
@@ -127,7 +127,7 @@ const About = () => {
             </div>
             
             <div className="team-member">
-                <img className="team-member-image" src="/src/assets/miles-photo.jpg"></img>
+                <img className="team-member-image" src="/miles-photo.jpg" />
               <h3 className="team-member-name">Miles King</h3>
               <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
@@ -144,11 +144,11 @@ const About = () => {
           <h2 className="section-title text-center fade-in">Our Partners & Affiliations</h2>
           <div className="partners-grid fade-in">
             <div className="partner">
-              <img className="partner-logo" src="src/assets/ai-safety-institute.jpg"></img>
+              <img className="partner-logo" src="/ai-safety-institute.jpg" />
               <h3 className="partner-name">AI Safety Institute</h3>
             </div>
             <div className="partner">
-              <img className="partner-logo" src="src/assets/center-for-ai-security.jpg"></img>
+              <img className="partner-logo" src="/center-for-ai-security.jpg" />
               <h3 className="partner-name">Center for AI Security</h3>
             </div>
              {/* <div className="partner">
@@ -160,11 +160,11 @@ const About = () => {
               <h3 className="partner-name">Tech Safety Alliance</h3>
             </div>  */}
             <div className="partner">
-              <img className="partner-logo" src="src/assets/NANDA.jpg"></img>
+              <img className="partner-logo" src="/NANDA.jpg" />
               <h3 className="partner-name">NANDA International</h3>
             </div> 
             <div className="partner">
-              <img className="partner-logo" src="src/assets/fusen-world.jpg"></img>
+              <img className="partner-logo" src="/fusen-world.jpg" />
               <h3 className="partner-name">Fusen World</h3>
             </div> 
           </div>
