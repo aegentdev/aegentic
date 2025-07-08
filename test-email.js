@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import nodemailer from 'nodemailer';
+
 // Test SMTP configuration
 async function testEmail() {
   console.log('Testing SMTP configuration...');
