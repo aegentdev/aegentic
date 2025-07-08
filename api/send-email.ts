@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import * as nodemailer from 'nodemailer';
+// Load .env variables in local development (ignored by Vercel in production)
+import 'dotenv/config';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {

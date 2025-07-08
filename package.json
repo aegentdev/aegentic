@@ -11,7 +11,6 @@
     "preview": "vite preview",
     "vercel-dev": "vercel dev"
   },
-  "homepage": "https://aegentdev.github.io/aegentic/",
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
