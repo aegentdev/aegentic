@@ -25,64 +25,30 @@ const Contact = () => {
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     setIsSubmitting(true);
-    
     try {
-      // Send form data to Vercel API
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: 'aegentdev@gmail.com', // Your email address
-          subject: `Contact Form: ${formData.subject}`,
-          text: `
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company || 'Not provided'}
-Subject: ${formData.subject}
-Message: ${formData.message}
-          `,
-          html: `
-<h2>New Contact Form Submission</h2>
-<p><strong>Name:</strong> ${formData.name}</p>
-<p><strong>Email:</strong> ${formData.email}</p>
-<p><strong>Company:</strong> ${formData.company || 'Not provided'}</p>
-<p><strong>Subject:</strong> ${formData.subject}</p>
-<p><strong>Message:</strong></p>
-<p>${formData.message.replace(/\n/g, '<br>')}</p>
-          `,
-        }),
+          access_key: '9d18aaa1-af9d-4fc0-bce1-57590045eb8b', // <-- Replace with your real key
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          subject: formData.subject,
+          message: formData.message
+        })
       });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.details || `HTTP ${response.status}: ${response.statusText}`);
+      const result = await response.json();
+      if (result.success) {
+        setFormSubmitted(true);
+        setFormData({ name: '', email: '', company: '', subject: '', message: '' });
+        setTimeout(() => setFormSubmitted(false), 5000);
+      } else {
+        alert('Failed to send message. Please try again or contact us directly at aegentdev@gmail.com');
       }
-
-      console.log('Form submitted successfully:', formData);
-      setFormSubmitted(true);
-      
-      // Reset form after submission
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: ''
-      });
-      
-      // Reset submission status after 5 seconds
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 5000);
-      
     } catch (error) {
-      console.error('Error submitting form:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-      alert(`Failed to send message: ${errorMessage}\n\nPlease try again or contact us directly at aegentdev@gmail.com`);
+      alert('Failed to send message. Please try again or contact us directly at aegentdev@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
