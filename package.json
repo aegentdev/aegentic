@@ -8,7 +8,8 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel-dev": "vercel dev"
   },
   "homepage": "https://aegentdev.github.io/aegentic/",
   "dependencies": {
@@ -45,12 +46,16 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "cors": "^2.8.5",
     "date-fns": "^3.6.0",
+    "dotenv": "^17.1.0",
     "embla-carousel-react": "^8.3.0",
+    "express": "^5.1.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
     "marked": "^16.0.0",
     "next-themes": "^0.3.0",
+    "nodemailer": "^7.0.5",
     "react": "^18.3.1",
     "react-calendly": "^4.4.0",
     "react-day-picker": "^8.10.1",
@@ -63,14 +68,18 @@
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.3",
+    "vercel": "^44.2.13",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/node": "^22.5.5",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.16.0",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@vercel/node": "^3.0.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
@@ -79,7 +88,8 @@
     "globals": "^15.9.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.11",
-    "typescript": "^5.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.19"
   }
