@@ -12,6 +12,7 @@ const Contact = () => {
   });
   
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -21,25 +22,69 @@ const Contact = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, you would send the form data to a server
-    console.log('Form submitted:', formData);
-    setFormSubmitted(true);
     
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      subject: '',
-      message: ''
-    });
+    setIsSubmitting(true);
     
-    // Reset submission status after 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
+    try {
+      // Send form data to Vercel API
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: 'aegentdev@gmail.com', // Your email address
+          subject: `Contact Form: ${formData.subject}`,
+          text: `
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company || 'Not provided'}
+Subject: ${formData.subject}
+Message: ${formData.message}
+          `,
+          html: `
+<h2>New Contact Form Submission</h2>
+<p><strong>Name:</strong> ${formData.name}</p>
+<p><strong>Email:</strong> ${formData.email}</p>
+<p><strong>Company:</strong> ${formData.company || 'Not provided'}</p>
+<p><strong>Subject:</strong> ${formData.subject}</p>
+<p><strong>Message:</strong></p>
+<p>${formData.message.replace(/\n/g, '<br>')}</p>
+          `,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.details || `HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      console.log('Form submitted successfully:', formData);
+      setFormSubmitted(true);
+      
+      // Reset form after submission
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        subject: '',
+        message: ''
+      });
+      
+      // Reset submission status after 5 seconds
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      alert(`Failed to send message: ${errorMessage}\n\nPlease try again or contact us directly at aegentdev@gmail.com`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -229,7 +274,13 @@ const Contact = () => {
                     ></textarea>
                   </div>
                   
-                  <button type="submit" className="btn btn-primary">Send Message</button>
+                  <button 
+                    type="submit" 
+                    className="btn btn-primary" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
                 </form>
               )}
             </div>
