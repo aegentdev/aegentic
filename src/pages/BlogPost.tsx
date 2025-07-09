@@ -8,10 +8,10 @@ const blogPostsData = {
     title: 'Towards Measurable Security in Agentic AI',
     date: 'June 10, 2025',
     author: 'Gauri Sharma',
-    authorRole: 'Student Developer',
-    image: '/blog-1-card.jpg',
+    authorRole: 'Developer',
+    image: 'https://img.freepik.com/premium-photo/close-up-brown-white-marble-with-brown-texture_1361952-1420.jpg',
     content: `
-# Towards Measurable Security in Agentic AI
+## Towards Measurable Security in Agentic AI
 
 Once the domain of experimental prototypes, today's agents can manage tools, issue commands, and orchestrate complex workflows across multiple components. While functionality and efficiency have been eagerly benchmarked, **security evaluation** is just beginning to gain the structured attention it deserves. Foundational frameworks — such as the <a href="https://vineethsai.github.io/aivss/">OWASP Agentic AI Top 10 Vulnerability Scoring System (AIVSS)</a>, the MAESTRO framework, and the <a href="https://cloudsecurityalliance.org/research/working-groups/ai-safety-initiative">CSA's Red Teaming Guide</a> — have laid essential groundwork, thanks to the leadership of experts like Ken Huang.
 
@@ -19,15 +19,22 @@ These contributions provide a robust foundation for evaluating agentic risk. Now
 
 <figure>
   <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*WqwYP5kmg1na9jFP" alt="An overview of the AIVSS methodology — https://vineethsai.github.io/aivss/" />
-  <figcaption>An overview of the AIVSS methodology — https://vineethsai.github.io/aivss/</figcaption>
+  <figcaption style="justify-self:center">An overview of the AIVSS methodology — <a href="https://vineethsai.github.io/aivss/">https://vineethsai.github.io/aivss/</a></figcaption>
 </figure>
+
+---
+
+<br/>
 
 This article surveys the current state of Agentic AI security benchmarking and adoption. With the emergence of infrastructure like <a href="https://www.media.mit.edu/projects/mit-nanda/overview/#:~:text=NANDA%20%28Networked%20Agents%20and%20Decentralized,of%20autonomous%20AI%20agents%20that">MIT's NANDA</a>, a team at MIT creating the "Internet of AI Agents," the path is clearer than ever for a standardized approach to security evaluation. The challenge now is not identifying risks — they're well-documented — but turning that knowledge into **testable, measurable, and repeatable metrics** across ecosystems and contexts. As a student developer, I believe we urgently need to **bring security literacy into the agent-building process**. More and more student internships now ask not for Python fluency, but for experience working with MCP servers — architectures that didn't even exist a year ago.
 
 <figure>
   <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*i2I58MrMkdJkd9Qj" alt="NANDA" />
-  <figcaption>[NANDA (Networked Agents And Decentralized AI) builds on Anthropic's Model Context Protocol (MCP) to create a true Internet of AI Agents. While MCP provides standardized interaction between AI agents, tools and resources, NANDA adds the critical infrastructure needed for distributed agent intelligence at scale. From https://nanda.media.mit.edu/.</figcaption>
+  <figcaption style="justify-self:center">NANDA (Networked Agents And Decentralized AI) builds on Anthropic's Model Context Protocol (MCP) to create a true Internet of AI Agents. While MCP provides standardized interaction between AI agents, tools and resources, NANDA adds the critical infrastructure needed for distributed agent intelligence at scale. From <a href=\"https://nanda.media.mit.edu/\">https://nanda.media.mit.edu/</a>.</figcaption>
 </figure>
+
+---
+<br/>
 
 NANDA (Networked Agents And Decentralized AI) builds on Anthropic's Model Context Protocol (MCP) to create a true Internet of AI Agents. While MCP provides standardized interaction between AI agents, tools and resources, NANDA adds the critical infrastructure needed for distributed agent intelligence at scale. From https://nanda.media.mit.edu/.
 
@@ -35,7 +42,7 @@ This is especially urgent as agentic systems grow more autonomous, connected, an
 
 ## Understanding Multi-Agent System Infrastructure
 
-## Current Threats in Multi-Agent Workflows
+
 The architecture behind multi-agent systems (MAS) is undergoing rapid evolution, moving from siloed implementations to visions of web-scale interoperability. At the core of this transformation is the recognition that agents are no longer single-threaded tools operating in isolation — they're collaborative, persistent, and increasingly responsible for orchestrating mission-critical workflows.
 
 Several architectural protocols have emerged to facilitate coordination across autonomous agents:
@@ -44,21 +51,28 @@ Several architectural protocols have emerged to facilitate coordination across a
 - Agent2Agent (A2A) by Google introduces structured inter-agent communication via JSON-RPC and AgentCards, enabling agents to negotiate, delegate, and verify identities.
 - Agent Communication Protocol (ACP) from IBM embraces RESTful paradigms for agent messaging and orchestration, emphasizing developer-accessible infrastructure.
 - NANDA, MIT's experimental agent registry, builds on top of MCP to support distributed agent discovery and verifiable capability declarations through a federated system of AgentFacts.
+
 Here is a great overview of more protocols and their use cases by Yang et al's A Survey of AI Agent Protocols:
 
 <figure>
   <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LBEj8Kl00SJP3kbXrqq35A.png" alt="Overview of popular agent protocols. From A Survey of AI Agent Protocols." />
-  <figcaption>Overview of popular agent protocols. <a href="https://arxiv.org/abs/2504.16736">From A Survey of AI Agent Protocols</a>.</figcaption>
+  <figcaption style="justify-self:center">Overview of popular agent protocols. <a href="https://arxiv.org/abs/2504.16736">From A Survey of AI Agent Protocols</a>.</figcaption>
 </figure>
+
+---
+
+<br/>
 
 Also, a great overview of how AI development has evolved over the past few years from the same paper:
-
+<br/>
 <figure>
-  <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*D1VwITPWAnNnfAWJvYDdwA.png" alt="A timeline of the development of agent protocols." />
-  <figcaption>A timeline of the development of agent protocols. From A Survey of AI Agent Protocols.</figcaption>
+  <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*D1VwITPWAnNnfAWJvYDdwA.png"/>
+  <figcaption style="justify-self:center">A timeline of the development of agent protocols. From <a href=\"https://arxiv.org/abs/2504.16736\">A Survey of AI Agent Protocols</a>.</figcaption>
 </figure>
 
-Some of these protocols admittedly share similarities. For instance, A2A, MCP, and ACP each support some core primitives — identity, messaging, and capability expression — but still have space to develop in discovery, state persistence, and memory consistency. **Despite their strengths, these frameworks may operate in isolation**. The result is a fragmented ecosystem where interoperability is the exception, not the norm. In fact, NANDA's paper calls for <a href="https://github.com/aidecentralized/nandapapers/blob/main/Collaborative%20Agentic%20AI%20Needs%20Interoperability%20Across%20Ecosystems.pdf">interoperability across ecosystems</a>, asking for the "adoption of minimal standards" rather than waiting for dominant solutions to emerge.
+---
+<br/>
+Some of these protocols admittedly share similarities. For instance, A2A, MCP, and ACP each support some core primitives — identity, messaging, and capability expression — but still have space to develop in discovery, state persistence, and memory consistency. <strong>Despite their strengths, these frameworks may operate in isolation</strong>. The result is a fragmented ecosystem where interoperability is the exception, not the norm. In fact, NANDA's paper calls for <a href="https://github.com/aidecentralized/nandapapers/blob/main/Collaborative%20Agentic%20AI%20Needs%20Interoperability%20Across%20Ecosystems.pdf">interoperability across ecosystems</a>, asking for the "adoption of minimal standards" rather than waiting for dominant solutions to emerge.
 
 If you're interested in understanding how some of the current protocols work together, here's another great <a href="https://medium.com/@gaurisharma1686/towards-measurable-security-in-agentic-ai-2d0cc4147fe8#:~:text=here's%20another%20great-,article,-.%20To%20quote%20the">article</a>. To quote the author, Edwin Lisowski, "In short: we're early. But how we build and adopt these standards now will shape whether AI agents become a cohesive ecosystem — or a patchwork of silos." As interoperability evolves, it will increasingly shape the security architectures we design and deploy.
 
