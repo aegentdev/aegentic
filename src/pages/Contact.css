@@ -358,7 +358,6 @@
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-top: var(--space-xxl);
   text-align: center;
 }
 
