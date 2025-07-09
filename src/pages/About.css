@@ -38,11 +38,14 @@
 
 .about-content {
   color: var(--text-dark);
+  width: 85%;
+  justify-self:center;
 }
 
 .about-content .section-title {
   color: var(--text-dark);
   margin-bottom: var(--space-lg);
+  justify-self: center;
 }
 
 .about-content p {

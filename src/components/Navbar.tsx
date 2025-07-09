@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <div className="nav-container">
       <nav className={`navbar${isScrolled ? ' scrolled' : ''}`}>
-        <span className="nav-bg-logo">Aegent</span>
+        <span className="nav-bg-logo lexend" >aegent/dev</span>
         <div className="container navbar-container">
           <div className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <span></span>

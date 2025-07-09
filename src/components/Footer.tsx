@@ -8,14 +8,14 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <Link to="/" className="logo-text">Aegent</Link>
+            <Link to="/" className="logo-text">aegent/dev</Link>
             <p className="footer-tagline">
               Pre-deployment agent safety starts here.
             </p>
           </div>
           
           
-          <div className="footer-social">
+          {/* <div className="footer-social">
             <h4 itemID="Connect" >Connect</h4>
             <div className="social-icons">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -31,11 +31,11 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Aegent. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} aegent/dev. All rights reserved.</p>
           <div className="footer-legal">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>

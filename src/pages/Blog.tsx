@@ -30,15 +30,15 @@ const Blog = () => {
       <section className="blog-content section">
         <div className="container">
           <div className="blog-filters fade-in">
-            <div className="filter-categories">
+            {/* <div className="filter-categories">
               <button className="filter-button active">All</button>
               <button className="filter-button">Security</button>
               <button className="filter-button">Research</button>
               <button className="filter-button">Best Practices</button>
               <button className="filter-button">Case Studies</button>
-            </div>
+            </div> */}
             
-            <div className="search-container">
+            {/* <div className="search-container">
               <input type="text" placeholder="Search articles..." className="search-input" />
               <button className="search-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -46,7 +46,7 @@ const Blog = () => {
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
           
           <div className="blog-grid fade-in">
@@ -66,7 +66,7 @@ const Blog = () => {
         </div>
       </section>
       
-      <section className="blog-subscribe section">
+      {/* <section className="blog-subscribe section">
         <div className="container">
           <div className="subscribe-content fade-in">
             <h2 className="section-title text-center">Stay Updated</h2>
@@ -79,7 +79,7 @@ const Blog = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

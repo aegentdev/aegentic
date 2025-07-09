@@ -17,7 +17,7 @@ const About = () => {
       
       <section className="about-mission section">
         <div className="container">
-          <div className="about-grid">
+          <div >
             <div className="about-content fade-in">
               <h2 className="section-title">Our Mission</h2>
               <p>
@@ -31,22 +31,16 @@ const About = () => {
                 to ensuring that the next generation of AI systems are not only powerful, but also safe, reliable, 
                 and aligned with human values.
               </p>
-              <p>
-                We work with research labs, AI companies, and safety organizations to establish industry standards 
-                for agent communication security and provide the tools needed to meet those standards.
-              </p>
+              <br></br>
+              
             </div>
             
-            <div className="about-image fade-in">
-              <div className="image-container">
-                <img className="image-overlay" src="/about-page-filler.jpg" />
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
       
-      <section className="about-timeline section">
+      {/* <section className="about-timeline section">
         <div className="container">
           <h2 className="section-title text-center fade-in">Our Journey</h2>
           <div className="timeline fade-in">
@@ -102,7 +96,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       <section className="about-team section">
         <div className="container">
@@ -111,27 +105,24 @@ const About = () => {
             <div className="team-member">
                 <img className="team-member-image" src="/gauri-photo.jpg" />
               <h3 className="team-member-name">Gauri Sharma</h3>
-              <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
-                Personal description.
+                Georgia Institute of Technology.
               </p>
             </div>
             
             <div className="team-member">
                 <img className="team-member-image" src="/vidhi-photo.jpg" />
               <h3 className="team-member-name">Vidhi Kulkarni</h3>
-              <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
-              Personal description.
+              Georgia Institute of Technology.
               </p>
             </div>
             
             <div className="team-member">
                 <img className="team-member-image" src="/miles-photo.jpg" />
               <h3 className="team-member-name">Miles King</h3>
-              <p className="team-member-role">Founder</p>
               <p className="team-member-bio">
-              Personal description.
+              Kennesaw State University.
               </p>
             </div>
             
@@ -139,7 +130,7 @@ const About = () => {
         </div>
       </section>
       
-      <section className="about-partners section">
+      {/* <section className="about-partners section">
         <div className="container">
           <h2 className="section-title text-center fade-in">Our Partners & Affiliations</h2>
           <div className="partners-grid fade-in">
@@ -158,7 +149,7 @@ const About = () => {
             <div className="partner">
               <img className="partner-logo"></img>
               <h3 className="partner-name">Tech Safety Alliance</h3>
-            </div>  */}
+            </div>  
             <div className="partner">
               <img className="partner-logo" src="/NANDA.jpg" />
               <h3 className="partner-name">NANDA International</h3>
@@ -169,15 +160,13 @@ const About = () => {
             </div> 
           </div>
         </div>
-      </section>
+      </section> */}
       
       <section className="about-cta section">
         <div className="container">
           <div className="cta-content fade-in">
-            <h2 className="section-title text-center">Join Our Mission</h2>
-            <p className="cta-text text-center">
-              We're always looking for talented researchers, engineers, and organizations to collaborate with.
-            </p>
+            <h2 className="section-title text-center">Interested in collaborating?</h2>
+            
             <div className="cta-buttons">
               <a href="/contact" className="btn btn-primary">Contact Us</a>
               {/* <a href="#" className="btn btn-secondary">View Open Positions</a> */}

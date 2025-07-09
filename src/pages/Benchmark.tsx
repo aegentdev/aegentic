@@ -132,8 +132,8 @@ const Benchmark = () => {
               Get a comprehensive report with actionable insights to secure your agent communication systems.
             </p>
             <div className="cta-buttons">
-              <button className="btn btn-primary">Generate Full Report</button>
-              <button className="btn btn-secondary">Schedule Consultation</button>
+              {/* <button className="btn btn-primary">Generate Full Report</button> */}
+              <a href="/contact"><button className="btn btn-secondary">Schedule Consultation</button></a>
             </div>
           </div>
         </div>

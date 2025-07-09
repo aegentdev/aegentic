@@ -145,8 +145,8 @@
   padding: var(--space-xl);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-#mail-link{
-  color: red;
+.mail-link{
+  color: black;
 }
 .contact-form-container .section-title {
   color: var(--text-dark);

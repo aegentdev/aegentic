@@ -30,7 +30,7 @@ const Home = () => {
           <div className="our-story-text" style={{ flex: 1, minWidth: 260 }}>
             <h2 className="section-title fade-in">Our Story</h2>
             <p className="fade-in">
-              Inspired by the <strong>aegis</strong>—the mythic shield of protection—<strong>Aegent</strong> exists to proactively shield your multi-agent systems. We help developers harden agent interactions and build a secure foundation for AI, before threats ever arise.
+              Inspired by the <strong>aegis</strong>—the mythic shield of protection—<strong>Aegentdev</strong> exists to shield you from malicious actors and insecure design. We help businesses secure their AI agent systems, before they ship to customers.
             </p>
           </div>
           <div className="our-story-graphic fade-in" style={{ flex: '0 0 320px', display: 'flex', justifyContent: 'center', alignItems: 'center', minWidth: 220 }}>
@@ -99,8 +99,8 @@ const Home = () => {
             />
             <FeatureCard 
               icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>}
-              title="MCP Port Monitoring"
-              description="Monitor and secure all communication ports between multi-agent systems in real-time."
+              title="MCP Server Monitoring"
+              description="Monitor and secure the communication pathways between agents and servers."
             />
             <FeatureCard 
               icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>}

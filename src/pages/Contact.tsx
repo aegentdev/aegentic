@@ -69,14 +69,14 @@ const Contact = () => {
       <section className="contact-content section">
         <div className="container">
           <div className="contact-grid">
-            <div className="contact-form-container fade-in">
+            {/* <div className="contact-form-container fade-in">
               <h2 className="section-title">Contact Information</h2>
               <p className="contact-description">
                 Our team is here to help with any questions about our agent security tools, 
                 research collaborations, or partnership opportunities.
               </p>
               
-              <div className="contact-methods">
+              {/* <div className="contact-methods">
                 <div className="contact-method">
                   <div className="contact-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -86,7 +86,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-details">
                     <h3>Email</h3>
-                    <a href="mailto:aegentdev@gmail.com" itemID="mail-link">aegentdev@gmail.com</a>
+                    <a href="mailto:aegentdev@gmail.com" className="mail-link" >aegentdev@gmail.com</a>
                   </div>
                 </div>
                 
@@ -100,7 +100,7 @@ const Contact = () => {
                     <h3>Phone</h3>
                     <p>+1 (555) 123-4567</p>
                   </div>
-                </div> */}
+                </div> 
                 
                 <div className="contact-method">
                   <div className="contact-icon">
@@ -114,7 +114,7 @@ const Contact = () => {
                     <p>Atlanta, Ga</p>
                   </div>
                 </div>
-              </div>
+              </div> 
               
               <div className="contact-social">
                 <h3>Connect With Us</h3>
@@ -145,8 +145,21 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             
+            
+
+            {/* Schedule a Demo Call Area */}
+            <div className="demo-call-container fade-in" itemID="Calendar">
+              <h2 className="section-title">Schedule a Demo Call</h2>
+              <p className="demo-call-description">
+                Want a personalized walkthrough of our platform? Book a live demo with our team and see how Aegentdev can help secure your AI agents.
+              </p>
+              {/* Calendly Inline Embed */}
+              <div className="calendly-inline-widget" style={{ minWidth: '320px', height: '630px' }}>
+                <InlineWidget url="https://calendly.com/gsharma-fusen/30min?month=2025-06" />
+              </div>
+            </div>
             <div className="contact-form-container fade-in">
               <h2 className="section-title">Send Us a Message</h2>
               
@@ -236,18 +249,6 @@ const Contact = () => {
                 </form>
               )}
             </div>
-
-            {/* Schedule a Demo Call Area */}
-            <div className="demo-call-container fade-in">
-              <h2 className="section-title">Schedule a Demo Call</h2>
-              <p className="demo-call-description">
-                Want a personalized walkthrough of our platform? Book a live demo with our team and see how Aegentdev can help secure your AI agents.
-              </p>
-              {/* Calendly Inline Embed */}
-              <div className="calendly-inline-widget" style={{ minWidth: '320px', height: '630px' }}>
-                <InlineWidget url="https://calendly.com/gsharma-fusen/30min?month=2025-06" />
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -276,7 +277,7 @@ const Contact = () => {
         </div>
       </section> */}
       
-      <section className="contact-faq section">
+      {/* <section className="contact-faq section">
         <div className="container">
           <h2 className="section-title text-center fade-in">Frequently Asked Questions</h2>
           <div className="faq-grid fade-in">
@@ -313,7 +314,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

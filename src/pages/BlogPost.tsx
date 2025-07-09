@@ -148,78 +148,9 @@ const BlogPost = () => {
           <div className="blog-post-container fade-in">
             <article className="blog-post-article" dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></article>
             
-            <div className="blog-post-share">
-              <span>Share this article:</span>
-              <div className="blog-post-share-buttons">
-                <button className="share-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                </button>
-                <button className="share-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                  </svg>
-                </button>
-                <button className="share-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </button>
-                <button className="share-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-                    <polyline points="16 6 12 2 8 6"></polyline>
-                    <line x1="12" y1="2" x2="12" y2="15"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-      
-      <section className="related-posts section">
-        <div className="container">
-          <h2 className="section-title fade-in">Related Articles</h2>
-          <div className="related-posts-grid fade-in">
-            {Object.entries(blogPostsData)
-              .filter(([postId]) => postId !== id)
-              .slice(0, 2)
-              .map(([postId, postData]) => (
-                <div className="related-post-card" key={postId}>
-                  <div className="related-post-image" style={{ backgroundImage: `url(${postData.image})` }}>
-                    <div className="related-post-overlay"></div>
-                  </div>
-                  <div className="related-post-content">
-                    <span className="related-post-date">{postData.date}</span>
-                    <h3 className="related-post-title">{postData.title}</h3>
-                    <Link to={`/blog/${postId}`} className="related-post-link">
-                      Read Article <span className="arrow">→</span>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-      </section>
-      
-      <section className="blog-subscribe section">
-        <div className="container">
-          <div className="subscribe-content fade-in">
-            <h2 className="section-title text-center">Stay Updated</h2>
-            <p className="subscribe-text text-center">
-              Subscribe to our newsletter for the latest research, security insights, and agent safety best practices.
-            </p>
-            <div className="subscribe-form">
-              <input type="email" placeholder="Your email address" className="subscribe-input" />
-              <button className="btn btn-primary">Subscribe</button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

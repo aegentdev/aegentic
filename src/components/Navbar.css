@@ -1,4 +1,8 @@
-
+.lexend {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 .navbar {
   position: fixed;
   top: 0;
@@ -46,6 +50,7 @@
 
 .nav-bg-logo {
   position: absolute;
+  font-family: lexend;
   top: -0.1rem;
   left: 2rem;
   width: 100%;

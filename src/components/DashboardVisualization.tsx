@@ -25,13 +25,13 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
   // Default data if none provided
   const defaultData = {
     nodes: [
-      { id: 'agent1', x: 200, y: 150, radius: 15, color: '#5D5646', risk: 0.2, type: 'primary', connections: ['agent2', 'agent3', 'agent4'] },
-      { id: 'agent2', x: 350, y: 100, radius: 12, color: '#A07D54', risk: 0.5, type: 'secondary', connections: ['agent1', 'agent5'] },
-      { id: 'agent3', x: 300, y: 250, radius: 12, color: '#A07D54', risk: 0.3, type: 'secondary', connections: ['agent1', 'agent6'] },
-      { id: 'agent4', x: 150, y: 250, radius: 10, color: '#3E5974', risk: 0.1, type: 'tertiary', connections: ['agent1'] },
-      { id: 'agent5', x: 450, y: 150, radius: 10, color: '#3E5974', risk: 0.7, type: 'tertiary', connections: ['agent2', 'agent7'] },
-      { id: 'agent6', x: 350, y: 350, radius: 10, color: '#3E5974', risk: 0.4, type: 'tertiary', connections: ['agent3'] },
-      { id: 'agent7', x: 500, y: 200, radius: 8, color: '#FF5252', risk: 0.9, type: 'risk', connections: ['agent5'] },
+      { id: 'Reddit MCP Server', x: 260, y: 120, radius: 14, color: '#f1c40f', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
+      { id: 'S&P 500 MCP Server', x: 60, y: 100, radius: 14, color: '#f1c40f', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
+      { id: 'Market Sentiment', x: 160, y: 150, radius: 22, color: '#2980b9', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
+      { id: 'Trend Analysis', x: 480, y: 140, radius: 22, color: '#2980b9', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
+      { id: 'Portfolio Rebalancer', x: 320, y: 250, radius: 22, color: '#2980b9', risk: 0.3, type: 'agent', connections: ['Risk Management', 'Trade Execution'] },
+      { id: 'Risk Management', x: 460, y: 330, radius: 22, color: '#2980b9', risk: 0.5, type: 'agent', connections: ['Trade Execution'] },
+      { id: 'Trade Execution', x: 180, y: 310, radius: 22, color: '#2980b9', risk: 0.1, type: 'agent', connections: ['Portfolio Rebalancer'] },
     ]
   };
   
@@ -48,20 +48,46 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
     
-    // Draw connections
+    // Draw connections (with arrows)
     const drawConnections = () => {
       visualizationData.nodes.forEach(node => {
         node.connections.forEach(targetId => {
           const target = visualizationData.nodes.find(n => n.id === targetId);
           if (target) {
-            const riskFactor = (node.risk + target.risk) / 2;
-            
+            // Draw arrowed line
+            const dx = target.x - node.x;
+            const dy = target.y - node.y;
+            const angle = Math.atan2(dy, dx);
+            const startX = node.x + Math.cos(angle) * node.radius;
+            const startY = node.y + Math.sin(angle) * node.radius;
+            const endX = target.x - Math.cos(angle) * target.radius;
+            const endY = target.y - Math.sin(angle) * target.radius;
+
+            ctx.save();
             ctx.beginPath();
-            ctx.moveTo(node.x, node.y);
-            ctx.lineTo(target.x, target.y);
-            ctx.strokeStyle = `rgba(160, 125, 84, ${0.3 + riskFactor * 0.5})`;
-            ctx.lineWidth = 1 + riskFactor * 2;
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = '#444';
+            ctx.lineWidth = 5;
             ctx.stroke();
+
+            // Draw arrowhead
+            const arrowLength = 18;
+            const arrowWidth = 10;
+            ctx.beginPath();
+            ctx.moveTo(endX, endY);
+            ctx.lineTo(
+              endX - arrowLength * Math.cos(angle - Math.PI / 8),
+              endY - arrowLength * Math.sin(angle - Math.PI / 8)
+            );
+            ctx.lineTo(
+              endX - arrowLength * Math.cos(angle + Math.PI / 8),
+              endY - arrowLength * Math.sin(angle + Math.PI / 8)
+            );
+            ctx.lineTo(endX, endY);
+            ctx.fillStyle = '#444';
+            ctx.fill();
+            ctx.restore();
           }
         });
       });
@@ -86,11 +112,11 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
         }
         
         // Draw label - changed text color to black
-        ctx.fillStyle = '#000000'; // Changed from white to black
-        ctx.font = '10px Inter, sans-serif';
+        ctx.fillStyle = '#000000';
+        ctx.font = '10px Inter, sans-serif'; // Scaled down with node size
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(node.id, node.x, node.y + node.radius + 15);
+        ctx.fillText(node.id, node.x, node.y + node.radius + 14);
       });
     };
     
@@ -99,18 +125,18 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
     let time = 0;
     
     const animate = () => {
-      time += 0.02; // Increased from 0.01 to make animation faster
+      time += 0.02;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Update node positions slightly for animation - increased movement
-      visualizationData.nodes.forEach(node => {
-        node.x += Math.sin(time + parseInt(node.id.replace('agent', '')) * 0.5) * 1.0; // Increased from 0.5
-        node.y += Math.cos(time + parseInt(node.id.replace('agent', '')) * 0.5) * 1.0; // Increased from 0.5
+      // Update node positions slightly for minimal animation
+      visualizationData.nodes.forEach((node, idx) => {
+        node.x += Math.sin(time + idx * 0.5) * 0.2;
+        node.y += Math.cos(time + idx * 0.5) * 0.2;
+        // Clamp node position to stay within canvas
+        node.x = Math.max(node.radius, Math.min(canvas.width - node.radius, node.x));
+        node.y = Math.max(node.radius, Math.min(canvas.height - node.radius, node.y));
       });
-      
       drawConnections();
       drawNodes();
-      
       animationFrameId = requestAnimationFrame(animate);
     };
     
@@ -124,25 +150,22 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
   
   return (
     <div className="dashboard-visualization">
-      <canvas ref={canvasRef} className="visualization-canvas"></canvas>
-      <div className="visualization-legend">
-        <div className="legend-item">
-          <span className="legend-color" style={{ backgroundColor: '#5D5646' }}></span>
-          <span>Primary Agent</span>
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'center', marginBottom: '12px', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: '#2980b9' }}></span>
+          <span style={{ fontSize: 14, color: '#000' }}>Agents</span>
         </div>
-        <div className="legend-item">
-          <span className="legend-color" style={{ backgroundColor: '#A07D54' }}></span>
-          <span>Secondary Agent</span>
-        </div>
-        <div className="legend-item">
-          <span className="legend-color" style={{ backgroundColor: '#3E5974' }}></span>
-          <span>Tertiary Agent</span>
-        </div>
-        <div className="legend-item">
-          <span className="legend-color" style={{ backgroundColor: '#FF5252' }}></span>
-          <span>High Risk Agent</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: '#f1c40f' }}></span>
+          <span style={{ fontSize: 14, color: '#000' }}>MCP Servers</span>
         </div>
       </div>
+      <canvas
+        ref={canvasRef}
+        className="visualization-canvas"
+        width={600}
+        height={250}
+      ></canvas>
     </div>
   );
 };
