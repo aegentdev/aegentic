@@ -64,7 +64,7 @@ const Benchmark = () => {
             </div>
             <div className="dashboard-card">
               <h3>Adversarial Robustness</h3>
-              <p> Compares the security posture of different LLM models in the system, highlighting any agents that would be a risk in an inter-operable system.</p>
+              <p> Compares the security posture of different LLM models, highlighting any that would be a risk in an inter-operable system.</p>
               <BenchmarkChart 
                 title="Adversarial Robustness Across Models"
                 type="bar"
