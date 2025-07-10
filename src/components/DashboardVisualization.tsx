@@ -25,13 +25,13 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
   // Default data if none provided
   const defaultData = {
     nodes: [
-      { id: 'Reddit MCP Server', x: 260, y: 120, radius: 14, color: '#f1c40f', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
-      { id: 'S&P 500 MCP Server', x: 57, y: 140, radius: 14, color: '#f1c40f', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
-      { id: 'Market Sentiment', x: 160, y: 150, radius: 22, color: '#2980b9', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
-      { id: 'Trend Analysis', x: 480, y: 140, radius: 22, color: '#2980b9', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
-      { id: 'Portfolio Rebalancer', x: 320, y: 250, radius: 22, color: '#2980b9', risk: 0.3, type: 'agent', connections: ['Risk Management', 'Trade Execution'] },
-      { id: 'Risk Management', x: 460, y: 330, radius: 22, color: '#2980b9', risk: 0.5, type: 'agent', connections: ['Trade Execution'] },
-      { id: 'Trade Execution', x: 180, y: 310, radius: 22, color: '#2980b9', risk: 0.1, type: 'agent', connections: ['Portfolio Rebalancer'] },
+      { id: 'Reddit MCP Server', x: 260, y: 120, radius: 14, color: '#A07D54', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
+      { id: 'S&P 500 MCP Server', x: 57, y: 140, radius: 14, color: '#A07D54', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
+      { id: 'Market Sentiment', x: 160, y: 150, radius: 22, color: '#3E5974', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
+      { id: 'Trend Analysis', x: 480, y: 140, radius: 22, color: '#3E5974', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
+      { id: 'Portfolio Rebalancer', x: 320, y: 250, radius: 22, color: '#3E5974', risk: 0.3, type: 'agent', connections: ['Risk Management', 'Trade Execution'] },
+      { id: 'Risk Management', x: 460, y: 330, radius: 22, color: '#3E5974', risk: 0.5, type: 'agent', connections: ['Trade Execution'] },
+      { id: 'Trade Execution', x: 180, y: 310, radius: 22, color: '#3E5974', risk: 0.1, type: 'agent', connections: ['Portfolio Rebalancer'] },
     ]
   };
   
@@ -158,11 +158,11 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
     <div className="dashboard-visualization">
       <div style={{ display: 'flex', gap: '24px', alignItems: 'center', marginBottom: '12px', justifyContent: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: '#2980b9' }}></span>
+          <span style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: '#3E5974' }}></span>
           <span style={{ fontSize: 14, color: '#000' }}>Agents</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: '#f1c40f' }}></span>
+          <span style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: '#A07D54' }}></span>
           <span style={{ fontSize: 14, color: '#000' }}>MCP Servers</span>
         </div>
       </div>
