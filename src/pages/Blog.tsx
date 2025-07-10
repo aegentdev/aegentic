@@ -10,7 +10,7 @@ const blogPosts = [
     title: 'Towards Measurable Security in Agentic AI',
     date: 'June 10, 2025',
     description: 'A survey of the current state of Agentic AI security benchmarking, adoption, and the need for measurable, teachable, and accessible security practices in multi-agent systems.',
-    image: '/blog-1-card.jpg'
+    image: 'https://img.freepik.com/premium-photo/close-up-brown-white-marble-with-brown-texture_1361952-1420.jpg'
   }
 ];
 
