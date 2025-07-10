@@ -157,7 +157,7 @@ const Contact = () => {
               </p>
               {/* Calendly Inline Embed */}
               <div className="calendly-inline-widget" style={{ minWidth: '320px', height: '630px' }}>
-                <InlineWidget url="https://calendly.com/gsharma-fusen/30min?month=2025-06" />
+                <InlineWidget url="https://calendly.com/aegentdev/30min?month=2025-07" />
               </div>
             </div>
             <div className="contact-form-container fade-in">

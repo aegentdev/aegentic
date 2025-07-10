@@ -61,7 +61,7 @@
 /* Updated grid layout with wider cards */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-lg);
   width: 95%;
   justify-self:center;
@@ -83,9 +83,12 @@
 }
 
 .dashboard-card h3 {
-  margin-bottom: var(--space-lg);
+  margin-bottom: 5px;
   color: var(--text-dark);
   font-size: var(--font-size-lg);
+}
+.dashboard-card p{
+  margin-bottom:30px;
 }
 
 .visualization-container {

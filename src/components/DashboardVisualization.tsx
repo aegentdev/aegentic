@@ -26,7 +26,7 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
   const defaultData = {
     nodes: [
       { id: 'Reddit MCP Server', x: 260, y: 120, radius: 14, color: '#f1c40f', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
-      { id: 'S&P 500 MCP Server', x: 60, y: 100, radius: 14, color: '#f1c40f', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
+      { id: 'S&P 500 MCP Server', x: 57, y: 140, radius: 14, color: '#f1c40f', risk: 0.1, type: 'external', connections: ['Market Sentiment'] },
       { id: 'Market Sentiment', x: 160, y: 150, radius: 22, color: '#2980b9', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
       { id: 'Trend Analysis', x: 480, y: 140, radius: 22, color: '#2980b9', risk: 0.2, type: 'agent', connections: ['Portfolio Rebalancer'] },
       { id: 'Portfolio Rebalancer', x: 320, y: 250, radius: 22, color: '#2980b9', risk: 0.3, type: 'agent', connections: ['Risk Management', 'Trade Execution'] },
@@ -44,9 +44,15 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    // Set canvas dimensions
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
+    const cssWidth = 525;
+    const cssHeight = 400;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = cssWidth * dpr;
+    canvas.height = cssHeight * dpr;
+    canvas.style.width = cssWidth + 'px';
+    canvas.style.height = cssHeight + 'px';
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
     
     // Draw connections (with arrows)
     const drawConnections = () => {
@@ -113,7 +119,7 @@ const DashboardVisualization = ({ data }: DashboardVisualizationProps) => {
         
         // Draw label - changed text color to black
         ctx.fillStyle = '#000000';
-        ctx.font = '10px Inter, sans-serif'; // Scaled down with node size
+        ctx.font = 'bold 10px Inter, sans-serif'; // Bold font for node labels
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(node.id, node.x, node.y + node.radius + 14);

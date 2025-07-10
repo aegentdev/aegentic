@@ -20,12 +20,14 @@ const Benchmark = () => {
           <div className="dashboard-grid">
             <div className="dashboard-card">
               <h3>Agent Communication Map</h3>
+              <p>Visualizes the agents and MCP servers in use and the relationships between them, highlighting any detected vulnerabilities.</p>
               <div className="visualization-container">
                 <DashboardVisualization />
               </div>
             </div>
             <div className="dashboard-card">
               <h3>Security Assessment</h3>
+              <p>Provides key insights into the security posture of the system.</p>
               <div className="assessment-stats">
                 <div className="stat-item">
                   <div className="stat-value">87<span className="stat-percent">%</span></div>
@@ -47,6 +49,7 @@ const Benchmark = () => {
             </div>
             <div className="dashboard-card">
               <h3>Adversarial Robustness</h3>
+              <p></p>
               <BenchmarkChart 
                 title="Adversarial Robustness Across Models"
                 type="bar"
@@ -54,6 +57,7 @@ const Benchmark = () => {
             </div>
             <div className="dashboard-card">
               <h3>Category Compliance</h3>
+              <p>Quantifies and visualizes the strengths and weaknesses of the system's security, and how they compare to compliance framework standards.</p>
               <BenchmarkChart 
                 title="Security Category Compliance"
                 type="radar"
@@ -61,6 +65,7 @@ const Benchmark = () => {
             </div>
             <div className="dashboard-card">
               <h3>Recent Vulnerabilities</h3>
+              <p>Tracks unresolved vulnerabilities in system.</p>
               <div className="vulnerability-list">
                 <div className="vulnerability-item critical">
                   <div className="vulnerability-header">
@@ -96,6 +101,7 @@ const Benchmark = () => {
             </div>
             <div className="dashboard-card">
               <h3>Security Recommendations</h3>
+              <p>Suggestions for improving the system's security posture.</p>
               <div className="recommendations-list">
                 <div className="recommendation-item">
                   <h4 className="recommendation-title">Implement Message Validation</h4>
