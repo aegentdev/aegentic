@@ -133,6 +133,7 @@
 
 .blog-post-article ul,
 .blog-post-article ol {
+  list-style: disc inside;
   margin-bottom: var(--space-lg);
   padding-left: var(--space-xl);
   color: var(--text-light);

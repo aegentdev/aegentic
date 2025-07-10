@@ -36,7 +36,6 @@ This article surveys the current state of Agentic AI security benchmarking and a
 ---
 <br/>
 
-NANDA (Networked Agents And Decentralized AI) builds on Anthropic's Model Context Protocol (MCP) to create a true Internet of AI Agents. While MCP provides standardized interaction between AI agents, tools and resources, NANDA adds the critical infrastructure needed for distributed agent intelligence at scale. From https://nanda.media.mit.edu/.
 
 This is especially urgent as agentic systems grow more autonomous, connected, and permissioned. When agents can write to databases, run shell commands, or coordinate across frameworks, their vulnerabilities become networked liabilities. As OWASP AIVSS and the CSA Agentic AI Red Teaming Guide both outline, an agent's threat surface is shaped not just by its code, but by its autonomy, memory, tool usage, and delegation behavior.
 

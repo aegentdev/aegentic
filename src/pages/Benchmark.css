@@ -26,7 +26,7 @@
 
 .benchmark-dashboard {
   background-color: var(--white);
-  padding: var(--space-xxl) 0;
+  padding: 0 0 var(--space-xxl) 0;
 }
 
 .dashboard-tabs {
@@ -296,6 +296,18 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   box-sizing: border-box;
+}
+
+.quant-benchmark-announcement {
+  background: var(--white);
+  color: #362312;
+  padding: 1.5rem 0 0 0;
+}
+.quant-benchmark-announcement .section-title {
+  color: #362312;
+}
+.quant-benchmark-announcement p {
+  color: #362312;
 }
 
 @media (max-width: 1200px) {
