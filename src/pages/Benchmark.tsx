@@ -15,6 +15,21 @@ const Benchmark = () => {
           </p>
         </div>
       </section>
+      {/* Quantitative Benchmark Announcement Section */}
+      <section className="quant-benchmark-announcement section">
+        <div className="container">
+          <div className="quant-benchmark-content fade-in" style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center', padding: '2rem 0' }}>
+            <h2 className="section-title" style={{ fontWeight: 700, fontSize: '2rem', marginBottom: '1rem' }}>Quantitative Benchmarking — Coming Soon</h2>
+            <p style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>
+              We are currently formulating a quantitative benchmark for agentic AI security. This benchmark will enable our platform to generate dashboards and insights that are not only actionable, but also grounded in the latest research and best practices.
+            </p>
+            <p style={{ fontSize: '1.15rem', marginBottom: '-3rem' }}>
+              Stay tuned for a research-backed dashboard experience, similar to the example below.
+            </p>
+          </div>
+        </div>
+      </section>
+      
       <section className="benchmark-dashboard section">
         <div className="overview-tab">
           <div className="dashboard-grid">
