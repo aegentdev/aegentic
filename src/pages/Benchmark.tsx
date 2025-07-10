@@ -49,7 +49,7 @@ const Benchmark = () => {
             </div>
             <div className="dashboard-card">
               <h3>Adversarial Robustness</h3>
-              <p></p>
+              <p> Compares the security posture of different LLM models in the system, highlighting any agents that would be a risk in an inter-operable system.</p>
               <BenchmarkChart 
                 title="Adversarial Robustness Across Models"
                 type="bar"
@@ -57,7 +57,7 @@ const Benchmark = () => {
             </div>
             <div className="dashboard-card">
               <h3>Category Compliance</h3>
-              <p>Quantifies and visualizes the strengths and weaknesses of the system's security, and how they compare to compliance framework standards.</p>
+              <p>Quantifies and visualizes the strengths and weaknesses of the system's security and how they compare to compliance framework standards.</p>
               <BenchmarkChart 
                 title="Security Category Compliance"
                 type="radar"
