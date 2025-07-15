@@ -97,39 +97,7 @@ const About = () => {
           </div>
         </div>
       </section> */}
-      
-      <section className="about-team section">
-        <div className="container">
-          <h2 className="section-title text-center fade-in">Our Team</h2>
-          <div className="team-grid fade-in">
-            <div className="team-member">
-                <img className="team-member-image" src="/gauri-photo.jpg" />
-              <h3 className="team-member-name">Gauri Sharma</h3>
-              <p className="team-member-bio">
-                Georgia Institute of Technology.
-              </p>
-            </div>
-            
-            <div className="team-member">
-                <img className="team-member-image" src="/vidhi-photo.jpg" />
-              <h3 className="team-member-name">Vidhi Kulkarni</h3>
-              <p className="team-member-bio">
-              Georgia Institute of Technology.
-              </p>
-            </div>
-            
-            <div className="team-member">
-                <img className="team-member-image" src="/miles-photo.jpg" />
-              <h3 className="team-member-name">Miles King</h3>
-              <p className="team-member-bio">
-              Kennesaw State University.
-              </p>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-      
+
       {/* <section className="about-partners section">
         <div className="container">
           <h2 className="section-title text-center fade-in">Our Partners & Affiliations</h2>
