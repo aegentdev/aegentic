@@ -48,8 +48,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/benchmark" className={location.pathname === '/benchmark' ? 'active' : ''}>
-                Benchmark
+              <Link to="/waitlist" className={location.pathname === '/waitlist' ? 'active' : ''}>
+                Waitlist
               </Link>
             </li>
             <li>
