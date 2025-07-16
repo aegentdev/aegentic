@@ -40,7 +40,7 @@ const Navbar = () => {
             <span></span>
             <span></span>
           </div>
-          <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`} style={{ margin: '0 auto' }}>
+          <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
             <li>
               <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
                 Home
@@ -72,7 +72,6 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <div className="navbar-cta"></div>
         </div>
       </nav>
     </div>

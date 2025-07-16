@@ -30,34 +30,59 @@ const Waitlist = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    try {
-      const response = await fetch('http://localhost:5000/waitlist-signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          useCase: formData.useCase,
-        }),
-      });
+    // Try multiple API endpoints for flexibility
+    const apiEndpoints = [
+      'http://localhost:5000/waitlist-signup',
+      '/api/waitlist-signup', // In case of proxy setup
+      'https://api.aegentdev.com/waitlist-signup' // Production endpoint
+    ];
 
-      const result = await response.json();
+    let lastError: any = null;
+    let success = false;
 
-      if (response.ok && result.success) {
-        setIsSubmitted(true);
-      } else {
-        // Handle error cases
-        alert(result.error || 'Failed to join waitlist. Please try again.');
+    for (const endpoint of apiEndpoints) {
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            useCase: formData.useCase,
+          }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          setIsSubmitted(true);
+          success = true;
+          break;
+        } else {
+          lastError = result.error || 'Server error';
+        }
+      } catch (error) {
+        lastError = error;
+        console.error(`Failed to connect to ${endpoint}:`, error);
+        continue; // Try next endpoint
       }
-    } catch (error) {
-      console.error('Error submitting waitlist form:', error);
-      alert('Network error. Please check your connection and try again.');
-    } finally {
-      setIsLoading(false);
     }
+
+    if (!success) {
+      // If all endpoints failed, provide helpful error message
+      const errorMessage = lastError?.message || lastError || 'Connection failed';
+      
+      if (errorMessage.includes('Failed to fetch') || errorMessage.includes('NetworkError')) {
+        alert('Unable to connect to server. For now, please email us directly at contact@aegentdev.com to join the waitlist.');
+      } else {
+        alert(errorMessage);
+      }
+    }
+
+    setIsLoading(false);
   };
 
   if (isSubmitted) {

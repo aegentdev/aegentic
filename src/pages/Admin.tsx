@@ -19,21 +19,36 @@ const Admin = () => {
   }, []);
 
   const fetchSignups = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/waitlist-signups');
-      const result = await response.json();
+    const apiEndpoints = [
+      'http://localhost:5000/waitlist-signups',
+      '/api/waitlist-signups',
+      'https://api.aegentdev.com/waitlist-signups'
+    ];
 
-      if (response.ok && result.success) {
-        setSignups(result.signups);
-      } else {
-        setError('Failed to fetch signups');
+    let lastError: any = null;
+
+    for (const endpoint of apiEndpoints) {
+      try {
+        const response = await fetch(endpoint);
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          setSignups(result.signups);
+          setError(null);
+          setLoading(false);
+          return;
+        } else {
+          lastError = 'Failed to fetch signups';
+        }
+      } catch (error) {
+        lastError = error;
+        console.error(`Failed to connect to ${endpoint}:`, error);
+        continue;
       }
-    } catch (error) {
-      console.error('Error fetching signups:', error);
-      setError('Network error');
-    } finally {
-      setLoading(false);
     }
+
+    setError(lastError?.message || 'Unable to connect to server');
+    setLoading(false);
   };
 
   const formatDate = (timestamp: string) => {
