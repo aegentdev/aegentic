@@ -68,8 +68,10 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <Link
-            to="/benchmark"
+          <a
+            href="https://mvp.aegentdev.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`btn navbar-sim-btn${simBtnActive ? ' active' : ''}`}
             style={{ marginLeft: 'auto', minWidth: 0 }}
             onMouseDown={() => setSimBtnActive(true)}
@@ -77,7 +79,7 @@ const Navbar = () => {
             onMouseLeave={() => setSimBtnActive(false)}
           >
             Run a Simulation
-          </Link>
+          </a>
           <div className="navbar-cta"></div>
         </div>
       </nav>
