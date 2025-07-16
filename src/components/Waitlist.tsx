@@ -30,13 +30,31 @@ const Waitlist = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call - replace with actual endpoint
     try {
-      // For now, just simulate a delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setIsSubmitted(true);
+      const response = await fetch('http://localhost:5000/waitlist-signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          useCase: formData.useCase,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+      } else {
+        // Handle error cases
+        alert(result.error || 'Failed to join waitlist. Please try again.');
+      }
     } catch (error) {
       console.error('Error submitting waitlist form:', error);
+      alert('Network error. Please check your connection and try again.');
     } finally {
       setIsLoading(false);
     }

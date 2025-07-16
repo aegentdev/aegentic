@@ -6,7 +6,6 @@ import './Navbar.css';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [simBtnActive, setSimBtnActive] = useState(false);
   const lastScrollY = useRef(0);
   const location = useLocation();
 
@@ -67,17 +66,12 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            <li>
+              <a href="https://www.mvp.aegentdev.com" target="_blank" rel="noopener noreferrer">
+                Simulation
+              </a>
+            </li>
           </ul>
-          <a
-            href="https://www.mvp.aegentdev.com"
-            className={`btn navbar-sim-btn${simBtnActive ? ' active' : ''}`}
-            style={{ marginLeft: 'auto', minWidth: 0 }}
-            onMouseDown={() => setSimBtnActive(true)}
-            onMouseUp={() => setSimBtnActive(false)}
-            onMouseLeave={() => setSimBtnActive(false)}
-          >
-            Run a Simulation
-          </a>
           <div className="navbar-cta"></div>
         </div>
       </nav>
