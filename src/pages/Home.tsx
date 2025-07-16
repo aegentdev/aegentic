@@ -19,7 +19,7 @@ const Home = () => {
           </p>
           <div className="hero-buttons fade-in">
             
-            <Link to="/benchmark" className="btn btn-primary">Explore Our Benchmark</Link>
+            <Link to="/waitlist" className="btn btn-primary">Join Waitlist</Link>
           </div>
         </div>
       </section>
