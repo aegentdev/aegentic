@@ -70,8 +70,6 @@ const Navbar = () => {
           </ul>
           <a
             href="https://mvp.aegentdev.com"
-            target="_blank"
-            rel="noopener noreferrer"
             className={`btn navbar-sim-btn${simBtnActive ? ' active' : ''}`}
             style={{ marginLeft: 'auto', minWidth: 0 }}
             onMouseDown={() => setSimBtnActive(true)}
