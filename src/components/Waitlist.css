@@ -1,24 +1,19 @@
 .waitlist-container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
-  background: #e0e0e0;
   position: relative;
+  background-color: var(--neutral-light);
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.waitlist-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="white" stop-opacity="0.1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="500" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
-  background-size: cover;
-  pointer-events: none;
+.waitlist-container .animated-hero-canvas {
+  opacity: 0.4;
 }
+
+
 
 .waitlist-card {
   background: white;

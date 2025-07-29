@@ -2,7 +2,25 @@
 import { useEffect, useRef } from 'react';
 import './AnimatedHero.css';
 
-const AnimatedHero = () => {
+interface AnimatedHeroProps {
+  gridSpacing?: number;
+  nodeRadius?: number;
+  lineWidth?: number;
+  maxDistance?: number;
+  amplitude?: number;
+  frequency?: number;
+  timeIncrement?: number;
+}
+
+const AnimatedHero = ({ 
+  gridSpacing = 50,
+  nodeRadius = 1,
+  lineWidth = 0.5,
+  maxDistance = 200,
+  amplitude = 20,
+  frequency = 0.004,
+  timeIncrement = 1.5
+}: AnimatedHeroProps = {}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
   useEffect(() => {
@@ -21,10 +39,7 @@ const AnimatedHero = () => {
     setCanvasDimensions();
     window.addEventListener('resize', setCanvasDimensions);
     
-    // Grid properties
-    const gridSpacing = 50;
-    const nodeRadius = 1;
-    const lineWidth = 0.5;
+    // Grid properties - use props or defaults
     
     // Colors
     const bronzeColor = '#A07D54';
@@ -54,17 +69,14 @@ const AnimatedHero = () => {
     
     let grid = createGrid();
     
-    // Animation properties - increased speed by adjusting these values
-    const maxDistance = 200;
-    const amplitude = 20; // Increased from 15
-    const frequency = 0.004; // Increased from 0.002
+    // Animation properties - use props or defaults
     
     // Animation loop
     let animationFrameId: number;
     let time = 0;
     
     const animate = () => {
-      time += 1.5; // Increased from 1 to make animation faster
+      time += timeIncrement; // Use prop or default
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Update grid points

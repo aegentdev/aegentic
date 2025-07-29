@@ -1,0 +1,40 @@
+.waitlist-page {
+  overflow-x: hidden;
+}
+
+.waitlist-hero {
+  background-color: var(--neutral-light);
+  padding: calc(var(--space-xxl) * 2) 0 var(--space-xxl);
+  text-align: center;
+}
+
+.page-title {
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  color: var(--text-dark);
+}
+
+.page-subtitle {
+  font-size: var(--font-size-lg);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-light);
+}
+
+.waitlist-content {
+  background-color: var(--neutral-light);
+  padding: var(--space-xxl) 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: var(--font-size-xxl);
+  }
+  
+  .page-subtitle {
+    font-size: var(--font-size-md);
+  }
+} 

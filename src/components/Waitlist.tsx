@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Waitlist.css';
+import AnimatedHero from './AnimatedHero';
 
 interface WaitlistFormData {
   name: string;
@@ -26,63 +27,36 @@ const Waitlist = () => {
     }));
   };
 
+
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
-    // Try multiple API endpoints for flexibility
-    const apiEndpoints = [
-      'http://localhost:5000/waitlist-signup',
-      '/api/waitlist-signup', // In case of proxy setup
-      'https://api.aegentdev.com/waitlist-signup' // Production endpoint
-    ];
-
-    let lastError: any = null;
-    let success = false;
-
-    for (const endpoint of apiEndpoints) {
-      try {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            company: formData.company,
-            useCase: formData.useCase,
-          }),
-        });
-
-        const result = await response.json();
-
-        if (response.ok && result.success) {
-          setIsSubmitted(true);
-          success = true;
-          break;
-        } else {
-          lastError = result.error || 'Server error';
-        }
-      } catch (error) {
-        lastError = error;
-        console.error(`Failed to connect to ${endpoint}:`, error);
-        continue; // Try next endpoint
-      }
-    }
-
-    if (!success) {
-      // If all endpoints failed, provide helpful error message
-      const errorMessage = lastError?.message || lastError || 'Connection failed';
-      
-      if (errorMessage.includes('Failed to fetch') || errorMessage.includes('NetworkError')) {
-        alert('Unable to connect to server. For now, please email us directly at contact@aegentdev.com to join the waitlist.');
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '9d18aaa1-af9d-4fc0-bce1-57590045eb8b',
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.useCase,
+          subject: 'Waitlist Signup'
+        })
+      });
+      const result = await response.json();
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', company: '', useCase: '' });
       } else {
-        alert(errorMessage);
+        alert('Failed to join waitlist. Please try again or contact us directly at aegentdev@gmail.com');
       }
+    } catch (error) {
+      alert('Failed to join waitlist. Please try again or contact us directly at aegentdev@gmail.com');
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   if (isSubmitted) {
@@ -129,6 +103,15 @@ const Waitlist = () => {
 
   return (
     <div className="waitlist-container">
+      <AnimatedHero 
+        gridSpacing={30}
+        nodeRadius={0.7}
+        lineWidth={0.3}
+        maxDistance={120}
+        amplitude={20}
+        frequency={0.004}
+        timeIncrement={4}
+      />
       <div className="waitlist-card">
         <div className="waitlist-header">
           <div className="waitlist-icon">
@@ -142,7 +125,7 @@ const Waitlist = () => {
 
         <form onSubmit={handleSubmit} className="waitlist-form">
           <div className="form-group">
-            <label htmlFor="name">Full Name *</label>
+            <label htmlFor="name">Full Name</label>
             <input
               type="text"
               id="name"
@@ -150,12 +133,11 @@ const Waitlist = () => {
               value={formData.name}
               onChange={handleInputChange}
               required
-              placeholder="Enter your full name"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email Address *</label>
+            <label htmlFor="email">Email Address</label>
             <input
               type="email"
               id="email"
@@ -163,7 +145,6 @@ const Waitlist = () => {
               value={formData.email}
               onChange={handleInputChange}
               required
-              placeholder="Enter your email address"
             />
           </div>
 
@@ -175,7 +156,6 @@ const Waitlist = () => {
               name="company"
               value={formData.company}
               onChange={handleInputChange}
-              placeholder="Your company name"
             />
           </div>
 
@@ -186,24 +166,16 @@ const Waitlist = () => {
               name="useCase"
               value={formData.useCase}
               onChange={handleInputChange}
-              placeholder="Tell us about your AI agent security needs..."
-              rows={3}
-            />
+              rows={5}
+            ></textarea>
           </div>
 
           <button 
             type="submit" 
             className="btn btn-primary waitlist-submit"
-            disabled={isLoading || !formData.name || !formData.email}
+            disabled={isLoading}
           >
-            {isLoading ? (
-              <>
-                <div className="loading-spinner"></div>
-                Joining Waitlist...
-              </>
-            ) : (
-              'Join Waitlist'
-            )}
+            {isLoading ? 'Joining Waitlist...' : 'Join Waitlist'}
           </button>
         </form>
 
