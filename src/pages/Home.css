@@ -42,6 +42,17 @@
   justify-content: center;
 }
 
+.hero-buttons .btn-secondary {
+  background-color: white;
+  color: #362312;
+  border: 1px solid #362312;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: #362312;
+  color: var(--white);
+}
+
 /* Terminal Section */
 .terminal-section {
   background-color: var(--white);
