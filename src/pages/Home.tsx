@@ -13,7 +13,7 @@ const Home = () => {
       <section className="hero-section">
         <AnimatedHero />
         <div className="container hero-content">
-          <h1 className="hero-title fade-in">Pre-Deployment Agent Safety Starts Here.</h1>
+          <h1 className="hero-title fade-in">Agent Safety Starts Here.</h1>
           <p className="hero-subtitle fade-in">
             We build diagnostic tools and security benchmarks to ensure agent-to-agent communication is safe before your AI systems ever go live.
           </p>
