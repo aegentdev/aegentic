@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="container navbar-container">
           <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
             <div style={{ flex: '0 0 auto' }}>
-              <span className="nav-bg-logo inter">aegent/dev</span>
+              <span className="nav-bg-logo inter">Aegent Dev</span>
             </div>
             <div style={{ flex: 1, display: 'flex' ,marginLeft: 155}}>
               <div className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>

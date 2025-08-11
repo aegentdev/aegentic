@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <Link to="/" className="logo-text">aegent/dev</Link>
+            <Link to="/" className="logo-text">Aegent Dev</Link>
             <p className="footer-tagline">
               Pre-deployment agent safety starts here.
             </p>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} aegent/dev. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Aegent Dev. All rights reserved.</p>
           <div className="footer-legal">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>
